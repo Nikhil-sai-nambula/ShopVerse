@@ -307,7 +307,7 @@ export default function () {
         >
           <Typography
             sx={{
-              fontSize: { xs: "5vw", sm: "3vw", lg: "2.5vw" },
+              fontSize: { xs: "3.8vw", sm: "3vw", lg: "2.5vw" },
               color: "white",
               cursor: "pointer",
               fontFamily: "Merriweather, serif",
@@ -342,7 +342,7 @@ export default function () {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                width: { xs: "30vw", lg: "15vw" },
+                width: { xs: "25vw", lg: "15vw" },
                 height: { xs: "3vw", lg: "2.5vw" },
                 backgroundColor: "white",
                 borderRadius: "2vw",
@@ -412,8 +412,8 @@ export default function () {
             <AccountMenu />
           </div>
           <div className="phone-bar">
-            {/* <PhoneSearch /> */}
             <div className="phone-icon-right">
+              <AccountMenu />
               <ShoppingCartOutlineIcon
                 sx={{ margin: "0vw" }}
                 onClick={() => navigate("/cart")}

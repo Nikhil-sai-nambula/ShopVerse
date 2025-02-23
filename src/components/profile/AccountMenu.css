@@ -35,3 +35,31 @@ body {
 .email {
   font-size: 0.8vw;
 }
+
+@media (max-width: 767px) {
+  .account-text {
+    display: none;
+  }
+  .text {
+    font-family: "Merriweather", Courier, monospace;
+  }
+  .name {
+    font-size: 2vw;
+  }
+  .email {
+    font-size: 1.5vw;
+  }
+
+  .name-email {
+    margin-left: 1vw;
+  }
+
+  .menu-item {
+    margin-left: 2vw;
+  }
+
+  .menu-name {
+    margin-left: 1vw;
+    font-size: 2vw;
+  }
+}

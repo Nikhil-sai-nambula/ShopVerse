@@ -24,8 +24,8 @@
 
 @media (max-width: 767px) {
   .wishlist-indv-image {
-    height: 11vw;
-    width: 10vw;
-    border-radius: 0.4vw;
+    height: 20vw;
+    width: 18vw;
+    border-radius: 2vw;
   }
 }

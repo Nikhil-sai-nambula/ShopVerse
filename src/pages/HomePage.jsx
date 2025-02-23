@@ -33,7 +33,7 @@ export default function () {
         <div className="app-bar-heading">
           <Typography
             sx={{
-              fontSize: { xs: "5vw", sm: "4vw", lg: "2.53vw" },
+              fontSize: { xs: "4vw", sm: "4vw", lg: "2.53vw" },
               color: "white",
               cursor: "pointer",
               fontFamily: "Merriweather, serif",

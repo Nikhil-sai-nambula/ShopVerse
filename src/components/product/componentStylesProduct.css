@@ -277,4 +277,7 @@ span {
     display: flex;
     justify-content: center;
   }
+  .sizetext {
+    font-size: 5vw;
+  }
 }

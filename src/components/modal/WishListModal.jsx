@@ -41,7 +41,7 @@ export default function WishListModal({
         PaperProps={{
           sx: {
             width: {
-              xs: "50vw",
+              xs: "60vw",
               sm: "50vw",
               md: "30vw",
               lg: "30vw",
@@ -120,7 +120,7 @@ export default function WishListModal({
                           <Typography
                             sx={{
                               color: "black",
-                              fontSize: { xs: "2vw", lg: "1.1vw" },
+                              fontSize: { xs: "2.4vw", lg: "1.1vw" },
                               fontWeight: "500",
                             }}
                           >
@@ -129,27 +129,20 @@ export default function WishListModal({
                           <Typography
                             sx={{
                               color: "black",
-                              fontSize: { xs: "1vw", lg: "0.9vw" },
+                              fontSize: { xs: "2vw", lg: "0.9vw" },
                               fontWeight: "500",
                             }}
                           >
                             {product.productOneLiner}
                           </Typography>
                           <div className="price" style={{ display: "flex" }}>
-                            <CurrencyRupeeIcon
-                              sx={{
-                                fontSize: { md: "0.9vw" },
-                                marginLeft: { md: "0.5vw" },
-                                marginTop: { md: "0.2vw" },
-                              }}
-                            />
                             <Typography
                               sx={{
-                                fontSize: { lg: "0.9vw" },
+                                fontSize: { xs: "2vw", lg: "0.9vw" },
                                 fontWeight: "500",
                               }}
                             >
-                              {product.price}
+                              ₹{product.price}
                             </Typography>
                           </div>
                         </div>

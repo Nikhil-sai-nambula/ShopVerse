@@ -4,7 +4,7 @@ export default function ProductSizeSelection(props) {
   return (
     <div className="product-size-selection-main">
       <div className="size">
-        <span>Size</span>
+        <span className="sizetext">Size</span>
         <ul className="list-size">
           {sizes.map((size) => (
             <li key={size} className="item-list">

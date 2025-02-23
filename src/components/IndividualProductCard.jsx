@@ -145,17 +145,9 @@ export default function (props) {
       <ProductName style={{ marginLeft: "0.5vw" }} value={product.name} />
       <ProductOneLiner style={{ marginLeft: "0.5vw" }} />
       <div className="price" style={{ display: "flex" }}>
-        <CurrencyRupeeIcon
-          sx={{
-            color: "black",
-            fontSize: { sm: "2vw", md: "1.1vw" },
-            marginLeft: { sm: "0.4vw", md: "0.5vw" },
-            marginTop: { sm: "0.4vw", md: "0.2vw" },
-          }}
-        />
         <ProductOneLiner
-          value={product?.price ? parseInt(product?.price) : "Rs 1000"}
-          style={{ marginBotton: "0.5vw" }}
+          value={product?.price ? `₹${product.price}` : "Rs 1000"}
+          style={{ marginBotton: "0.5vw", marginLeft: "0.7vw" }}
         />
       </div>
     </div>
