@@ -1,0 +1,12 @@
+body,
+html {
+  overflow-x: auto;
+  position: relative;
+}
+
+body {
+  padding: 0;
+  overflow-x: hidden;
+  margin: 0;
+  overflow-y: scroll;
+}

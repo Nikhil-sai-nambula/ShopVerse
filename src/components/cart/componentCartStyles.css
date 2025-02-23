@@ -1,0 +1,143 @@
+div,
+img,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.cart-product-name {
+  color: black;
+  font-size: 1.4vw;
+  font-weight: 550;
+  margin-top: 0.5vw;
+}
+
+.cart-product-image {
+  height: 11vw;
+  width: 9vw;
+  border-radius: 1vw;
+}
+
+.cart-product-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2vw;
+}
+
+.cart-product-headings {
+  display: flex;
+  padding: 1vw;
+  gap: 4vw;
+}
+
+.cart-product-line {
+  border: 0.1vw solid rgb(153, 153, 153);
+  margin: 0 2vw;
+}
+
+.cart-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 0.8vw;
+  margin-left: 3vw;
+}
+
+.quantityBtn {
+  background-color: black;
+  color: gold;
+  font-size: 1vw;
+  border-radius: 0.3vw;
+  padding: 0.1vw 0.5vw;
+}
+span {
+  font-size: 1vw;
+  font-weight: 590;
+  color: black;
+}
+
+.quantityBtnDecrement {
+  padding: 0.1vw 0.52vw;
+}
+
+.cart-input {
+  padding: 0.75vw;
+  border: 1px solid #ccc;
+  background-color: rgb(236, 232, 232);
+  border-radius: 2vw;
+  font-size: 1vw;
+  transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.cart-input:focus {
+  border: 1px solid rgb(173, 172, 172);
+  box-shadow: 0 0 0 2px white, 0 0 0 0.3vw rgba(39, 38, 38, 0.3); /* Outer border */
+  outline: none;
+}
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+  align-self: baseline;
+  color: black;
+  margin: 0vw 3vw;
+  background-color: white;
+  padding: 2vw 1vw;
+  border-radius: 1vw;
+}
+
+.seperator {
+  border: 0.12vw solid rgb(164, 162, 162);
+  margin: 1vw 0;
+}
+
+.coupon-apply {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0.6vw;
+  border-radius: 2vw;
+  background-color: black;
+  color: rgb(237, 204, 142);
+  margin-top: 1vw;
+}
+
+.cart-input::placeholder {
+  font-style: italic;
+  color: black;
+}
+
+.order-summary {
+  background-color: rgb(240, 199, 122);
+  border-radius: 0.5vw;
+  padding: 1vw;
+}
+
+.order-heading {
+  font-size: 1.6vw;
+  color: black;
+  font-weight: 600;
+  margin-bottom: 1vw;
+}
+
+.order-sub-heading {
+  font-size: 1vw;
+  padding: 0.1vw 0;
+  color: rgb(86, 81, 81);
+  font-weight: 600;
+}
+
+.order-top-container {
+  padding: 1vw;
+}
+
+.coupon {
+  padding: 0.6vw;
+}

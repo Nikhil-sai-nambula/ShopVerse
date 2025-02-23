@@ -1,0 +1,212 @@
+.register-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  color: black;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.register-box {
+  background: white;
+  padding: 2vw;
+  border-radius: 0.7vw;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 27vw;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.3vw;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.4vw;
+  text-align: left;
+  font-size: 1.2vw;
+}
+
+.input {
+  padding: 0.75vw;
+  width: 25vw;
+  border: 1px solid #ccc;
+  border-radius: 0.5vw;
+  font-size: 1vw;
+  transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+button {
+  width: 100%;
+  padding: 0.8vw;
+  background: black;
+  color: white;
+  font-size: 2vw;
+  border: none;
+  border-radius: 0.3vw;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+button:hover {
+  background: #333;
+  transform: 0.6;
+}
+
+.otp {
+  margin-top: 2vw;
+}
+
+.otp-box .input {
+  width: 25vw;
+  padding: 0.75vw;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1vw;
+  margin-bottom: 1vw;
+}
+
+.input:focus {
+  border: 1px solid grey;
+  box-shadow: 0 0 0 2px white, 0 0 0 0.3vw rgba(39, 38, 38, 0.3); /* Outer border */
+  outline: none;
+}
+
+p {
+  color: rgb(94, 94, 94);
+}
+
+.heading {
+  font-size: 2.5vw;
+}
+
+.submit {
+  margin-top: 1vw;
+  font-size: 1.2vw;
+}
+
+.error-message {
+  color: rgb(249, 26, 26);
+  text-align: center;
+  margin-top: 0.3vw;
+  font-size: 1vw;
+  font-weight: 100;
+}
+
+.login-to-register {
+  margin-top: 1vw;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  right: 1.2vw;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 2vw;
+  color: #777;
+}
+
+.icon:hover {
+  color: #007bff;
+}
+
+@media (max-width: 786px) {
+  .register-page {
+    margin-top: -10vw;
+  }
+
+  .register-box {
+    padding: 5vw;
+    border-radius: 2vw;
+    width: 60vw;
+  }
+
+  .form-group {
+    margin-bottom: 2.5vw;
+  }
+
+  label {
+    font-weight: bold;
+    margin-bottom: 1vw;
+    font-size: 2.5vw;
+  }
+
+  .heading {
+    font-size: 5.5vw;
+  }
+
+  .input {
+    width: 55vw;
+    padding: 2vw;
+    border: 1px solid #ccc;
+    border-radius: 1.5vw;
+    font-size: 2.5vw;
+    font-weight: 600;
+  }
+
+  button {
+    width: 100%;
+    padding: 2.2vw;
+    font-size: 1vw;
+    border-radius: 1.5vw;
+    transition: 0.3s;
+  }
+
+  .otp {
+    margin-top: 2vw;
+  }
+
+  .otpinfo {
+    margin-top: -2vw;
+    margin-bottom: 6vw;
+  }
+
+  .otp-box .input {
+    width: 55.5vw;
+    padding: 2vw;
+    border: 1px solid #ccc;
+    border-radius: 2vw;
+    font-size: 2.5vw;
+    margin-bottom: 1vw;
+  }
+
+  .input:focus {
+    border: 0.5vw solid grey;
+    box-shadow: 0 0 0 1vw white, 0 0 0 0.3vw rgba(39, 38, 38, 0.3); /* Outer border */
+    outline: none;
+    font-weight: 800;
+  }
+
+  p {
+    font-size: 2.5vw;
+    color: rgb(94, 94, 94);
+  }
+
+  .login-to-register {
+    margin-top: 3vw;
+  }
+
+  .error-message {
+    color: rgb(249, 26, 26);
+    text-align: left;
+    margin-top: 1vw;
+    font-size: 2.2vw;
+    font-weight: 500;
+  }
+
+  .submit {
+    margin-top: 5vw;
+    font-size: 2.5vw;
+  }
+}
