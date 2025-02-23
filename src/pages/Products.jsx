@@ -143,9 +143,8 @@ export default function () {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `${process.env.SHOPVERSE_URL}/products/getAllProducts`
-        );
+        const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
+        const response = await fetch(`${apiUrl}/products/getAllProducts`);
         if (!response.ok) {
           throw new Error("Couldn't retrieve Data");
         }
