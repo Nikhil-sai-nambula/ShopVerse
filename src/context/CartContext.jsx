@@ -59,7 +59,7 @@ export const CartProvider = ({ children }) => {
       try {
         setCartLoading(true);
         const response = await axios.get(
-          `${SHOPVERSE_URL}/cart/${user.userId}`,
+          `${process.env.SHOPVERSE_URL}/cart/${user.userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -90,7 +90,7 @@ export const CartProvider = ({ children }) => {
     if (user) {
       try {
         const response = await axios.post(
-          `${SHOPVERSE_URL}/cart/add/${user.userId}`,
+          `${process.env.SHOPVERSE_URL}/cart/add/${user.userId}`,
           {
             productId,
             productSize,
@@ -136,7 +136,7 @@ export const CartProvider = ({ children }) => {
     if (user && user.userId) {
       try {
         const response = await axios.delete(
-          `${SHOPVERSE_URL}/cart/remove-item`,
+          `${process.env.SHOPVERSE_URL}/cart/remove-item`,
           {
             params: { userId: user.userId, productId },
             headers: {
@@ -173,7 +173,7 @@ export const CartProvider = ({ children }) => {
     if (user) {
       try {
         await axios.put(
-          `${SHOPVERSE_URL}/cart/update-quantity`,
+          `${process.env.SHOPVERSE_URL}/cart/update-quantity`,
           {
             userId: user.userId,
             productId,

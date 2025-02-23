@@ -79,7 +79,7 @@ export default function Register() {
     try {
       setIsLoading(true);
       const response = await axios.post(
-        `${SHOPVERSE_URL}/auth/register`,
+        `${process.env.SHOPVERSE_URL}/auth/register`,
         formData
       );
       setResponse(response?.data?.message);
@@ -113,7 +113,7 @@ export default function Register() {
 
       try {
         const response = await axios.post(
-          `${SHOPVERSE_URL}/auth/verify-OTP`,
+          `${process.env.SHOPVERSE_URL}/auth/verify-OTP`,
           updatedOTPData
         );
         setOTPResponse(response.data);

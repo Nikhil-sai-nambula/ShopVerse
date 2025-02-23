@@ -40,7 +40,7 @@ export default function Login() {
     try {
       setIsLoading(true);
       const response = await axios.post(
-        `${SHOPVERSE_URL}/auth/login`,
+        `${process.env.SHOPVERSE_URL}/auth/login`,
         formData
       );
 

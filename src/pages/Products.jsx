@@ -144,7 +144,7 @@ export default function () {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `${SHOPVERSE_URL}/products/getAllProducts`
+          `${process.env.SHOPVERSE_URL}/products/getAllProducts`
         );
         if (!response.ok) {
           throw new Error("Couldn't retrieve Data");
@@ -193,7 +193,7 @@ export default function () {
       try {
         setWishListLoading(true);
         const response = await axios.get(
-          `${SHOPVERSE_URL}/wishlist/get-wishlist-items/${user.userId}`,
+          `${process.env.SHOPVERSE_URL}/wishlist/get-wishlist-items/${user.userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -238,7 +238,7 @@ export default function () {
     try {
       console.log(product);
       const response = await axios.post(
-        `${SHOPVERSE_URL}/wishlist/add/${user.userId}`,
+        `${process.env.SHOPVERSE_URL}/wishlist/add/${user.userId}`,
         formattedProduct,
         {
           headers: {
@@ -262,7 +262,7 @@ export default function () {
     try {
       console.log(user, productId);
       const response = await axios.delete(
-        `${SHOPVERSE_URL}/wishlist/remove/${user.userId}`,
+        `${process.env.SHOPVERSE_URL}/wishlist/remove/${user.userId}`,
 
         {
           headers: {
