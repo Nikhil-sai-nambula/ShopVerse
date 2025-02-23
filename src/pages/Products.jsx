@@ -191,8 +191,9 @@ export default function () {
     if (user) {
       try {
         setWishListLoading(true);
+        const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
         const response = await axios.get(
-          `${process.env.SHOPVERSE_URL}/wishlist/get-wishlist-items/${user.userId}`,
+          `${apiUrl}/wishlist/get-wishlist-items/${user.userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -236,8 +237,10 @@ export default function () {
 
     try {
       console.log(product);
+      const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
+
       const response = await axios.post(
-        `${process.env.SHOPVERSE_URL}/wishlist/add/${user.userId}`,
+        `${apiUrl}/wishlist/add/${user.userId}`,
         formattedProduct,
         {
           headers: {
@@ -260,8 +263,10 @@ export default function () {
 
     try {
       console.log(user, productId);
+      const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
+
       const response = await axios.delete(
-        `${process.env.SHOPVERSE_URL}/wishlist/remove/${user.userId}`,
+        `${apiUrl}/wishlist/remove/${user.userId}`,
 
         {
           headers: {

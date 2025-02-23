@@ -78,10 +78,8 @@ export default function Register() {
     sessionStorage.setItem("email", formData.email);
     try {
       setIsLoading(true);
-      const response = await axios.post(
-        `${process.env.SHOPVERSE_URL}/auth/register`,
-        formData
-      );
+      const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
+      const response = await axios.post(`${apiUrl}/auth/register`, formData);
       setResponse(response?.data?.message);
       if (response?.status === 200) {
         setSnackBarToBeShown(true);
@@ -112,8 +110,9 @@ export default function Register() {
       setOTPData(updatedOTPData);
 
       try {
+        const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
         const response = await axios.post(
-          `${process.env.SHOPVERSE_URL}/auth/verify-OTP`,
+          `${apiUrl}/auth/verify-OTP`,
           updatedOTPData
         );
         setOTPResponse(response.data);
