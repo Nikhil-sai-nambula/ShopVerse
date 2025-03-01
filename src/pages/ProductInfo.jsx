@@ -99,8 +99,8 @@ export default function () {
           </div>
         </div>
         <div className="product-details">
-          <ProductCardName />
-          <ProductCardOneLiner />
+          <ProductCardName value={product?.name} />
+          <ProductCardOneLiner value={product?.oneLiner} />
           <ProductCardPrice value={product.price} />
           <ProductCardRating value={product.rating} />
           <ProductSizeSelection
