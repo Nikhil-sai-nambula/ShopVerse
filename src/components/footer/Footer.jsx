@@ -10,16 +10,30 @@ import MailIcon from "@mui/icons-material/Mail";
 import WaterfallEffect from "../animation/WaterFallEffect";
 import { Typography } from "@mui/material";
 import SuccessfullSnackBar from "../utilities/SuccessfullSnackBar";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import { useState } from "react";
 
 export default function () {
   const [snackBarToBeShown, setSnackBarToBeShown] = useState(false);
-  let headingSize = "1.5vw";
-  let subHeadingSize = "1.1vw";
+  let headingSize = "1.4vw";
+  let subHeadingSize = "1vw";
+
+  const commonFontStyle = {
+    fontFamily: "Merriweather, serif",
+    color: "white",
+    cursor: "pointer",
+  };
 
   const iconStyle = {
     color: "#d4af37",
     fontSize: { xs: "5vw", sm: "5vw", lg: "2vw" },
+    borderRadius: "10vw",
+    cursor: "pointer",
+  };
+
+  const contactIconStyle = {
+    color: "#d4af37",
+    fontSize: { xs: "4vw", sm: "4vw", lg: "1.5vw" },
     borderRadius: "10vw",
     cursor: "pointer",
   };
@@ -32,93 +46,70 @@ export default function () {
             <div className="brand-name">
               <Typography
                 sx={{
+                  ...commonFontStyle,
                   fontSize: { xs: "5vw", sm: "5vw", lg: "1.5vw" },
                   color: "#d4af37",
-                  cursor: "pointer",
-                  fontFamily: "Merriweather, serif",
                 }}
               >
                 ShopVerse
               </Typography>
               <Typography
                 sx={{
+                  ...commonFontStyle,
                   fontSize: { xs: "3vw", sm: "3vw", lg: "1.2vw" },
-                  color: "white",
-                  cursor: "pointer",
-                  fontFamily: "Merriweather, serif",
                 }}
               >
-                Your one stop shopping place
+                Your Ultimate Shopping Destination
               </Typography>
             </div>
             <div className="brand-name">
               <Typography
                 sx={{
-                  fontSize: { xs: "4vw", sm: "4vw", lg: "1vw" },
+                  ...commonFontStyle,
+                  fontSize: { xs: "4vw", sm: "4vw", lg: "1.2vw" },
                   color: "#d4af37",
-                  cursor: "pointer",
-                  fontFamily: "Merriweather, serif",
                 }}
               >
                 About Us
               </Typography>
               <Typography
                 sx={{
+                  ...commonFontStyle,
                   fontSize: { xs: "3vw", sm: "3vw", lg: "1vw" },
-                  color: "white",
-                  cursor: "pointer",
-                  fontFamily: "Merriweather, serif",
-                  wordWrap: "break-word",
                   width: { xs: "60vw", sm: "65vw", lg: "20vw" },
                 }}
               >
-                We bring you the best possible products with top-notch shopping
-                experience
+                Discover the finest products, curated for an exceptional
+                shopping experience.
               </Typography>
             </div>
             <div className="brand-name">
               <Typography
                 sx={{
-                  fontSize: { xs: "4vw", sm: "4vw", lg: "1vw" },
+                  ...commonFontStyle,
+                  fontSize: { xs: "4vw", sm: "4vw", lg: "1.2vw" },
                   color: "#d4af37",
-                  cursor: "pointer",
-                  fontFamily: "Merriweather, serif",
                 }}
               >
                 Contact Us
               </Typography>
-
               <div className="footer-contact">
-                <WifiCalling3Icon
-                  sx={{
-                    color: "#d4af37",
-                    fontSize: { xs: "3vw", sm: "3vw", lg: "1.3vw" },
-                  }}
-                />
+                <WifiCalling3Icon sx={contactIconStyle} />
                 <Typography
                   sx={{
+                    ...commonFontStyle,
                     fontSize: { xs: "3vw", sm: "3vw", lg: "1vw" },
-                    color: "white",
-                    cursor: "pointer",
-                    fontFamily: "Merriweather, serif",
                   }}
                 >
                   +91 63050-57714
                 </Typography>
               </div>
               <div className="footer-contact">
-                <EmailIcon
-                  sx={{
-                    color: "#d4af37",
-                    fontSize: { xs: "3vw", sm: "3vw", lg: "1.3vw" },
-                  }}
-                />
+                <EmailIcon sx={contactIconStyle} />
                 <Typography
                   sx={{
+                    ...commonFontStyle,
                     fontSize: { xs: "3vw", sm: "3vw", lg: "1vw" },
-                    color: "white",
-                    cursor: "pointer",
-                    fontFamily: "Merriweather, serif",
                   }}
                 >
                   nambula.nikhilsai@gmail.com
@@ -127,7 +118,6 @@ export default function () {
             </div>
           </WaterfallEffect>
         </div>
-
         <div className="footer-column2">
           <WaterfallEffect>
             <MainHeading
@@ -186,10 +176,8 @@ export default function () {
           <WaterfallEffect>
             <Typography
               sx={{
+                ...commonFontStyle,
                 fontSize: { xs: "3vw", sm: "3vw", lg: "1vw" },
-                color: "white",
-                cursor: "pointer",
-                fontFamily: "Merriweather, serif",
                 marginLeft: "2.5vw",
               }}
             >
@@ -217,19 +205,23 @@ export default function () {
       <div className="footer-row2">
         <div className="footer-line"></div>
         <div className="social-media-handles">
+          <a
+            href="https://github.com/Nikhil-sai-nambula/e-commerce-application"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GitHubIcon sx={iconStyle} />
+          </a>
           <FacebookIcon sx={iconStyle} />
           <GoogleIcon sx={iconStyle} />
-          <TwitterIcon sx={iconStyle} />
           <InstagramIcon sx={iconStyle} />
         </div>
       </div>
-      {
-        <SuccessfullSnackBar
-          open={snackBarToBeShown}
-          onClose={() => setOpenSnackbar(false)}
-          message={"Subscribed"}
-        />
-      }
+      <SuccessfullSnackBar
+        open={snackBarToBeShown}
+        onClose={() => setSnackBarToBeShown(false)}
+        message={"Subscribed"}
+      />
     </div>
   );
 }

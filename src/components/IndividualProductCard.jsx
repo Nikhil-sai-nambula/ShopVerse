@@ -59,14 +59,6 @@ export default function (props) {
     }
   };
 
-  // useEffect(() => {
-  //   if (isFavorite) {
-  //     props?.addToWishList(props.product);
-  //   } else {
-  //     props?.removeFromWishList(props.product);
-  //   }
-  // }, [isFavorite]);
-
   const handleProductClick = () => {
     navigate(`/product/${props.product.id}`, { state: { product } });
   };
@@ -91,7 +83,7 @@ export default function (props) {
       const interval = setInterval(() => {
         setCurrentImage((prevImg) => (prevImg + 1) % props?.url?.length);
       }, 1000);
-      // console.log(props.url);
+      console.log(props.url);
       return () => clearInterval(interval);
     }
   }, [isHovering, props?.url?.length]);
@@ -116,7 +108,7 @@ export default function (props) {
     >
       <div className="carousel-container">
         <Slider {...slickSettings}>
-          {props?.url.map((image, index) => (
+          {props?.url?.map((image, index) => (
             <div key={index}>
               <img
                 className="indv-image"
@@ -146,7 +138,7 @@ export default function (props) {
       <ProductOneLiner style={{ marginLeft: "0.5vw" }} />
       <div className="price" style={{ display: "flex" }}>
         <ProductOneLiner
-          value={product?.price ? `₹${product.price}` : "Rs 1000"}
+          value={product?.price ? `₹${Math.round(product.price)}` : "Rs 1000"}
           style={{ marginBotton: "0.5vw", marginLeft: "0.7vw" }}
         />
       </div>

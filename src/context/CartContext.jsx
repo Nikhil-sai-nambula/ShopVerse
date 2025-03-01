@@ -17,7 +17,7 @@ export const CartProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
-  const [cartLoading, setCartLoading] = useState(true);
+  const [cartLoading, setCartLoading] = useState(false);
 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user"));

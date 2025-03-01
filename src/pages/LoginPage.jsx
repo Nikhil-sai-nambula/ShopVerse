@@ -6,6 +6,8 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { AuthContext } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
 import SuccessfullSnackBar from "../components/utilities/SuccessfullSnackBar";
+import Particles from "../components/core/Particles";
+import "./authPageStyles.css";
 
 export default function Login() {
   const { login } = useContext(AuthContext);
@@ -88,6 +90,27 @@ export default function Login() {
 
   return (
     <div className="login-page">
+      <div
+        style={{
+          width: "100vw",
+          height: "100vh",
+          position: "fixed",
+          zIndex: "1",
+          backgroundColor: "black",
+        }}
+      >
+        <Particles
+          particleColors={["#FFFFFF", "#FFFFFF"]}
+          particleCount={200}
+          particleSpread={8}
+          speed={0.1}
+          particleBaseSize={80}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
+
       <div className="register-page">
         <div className="register-box">
           <h1 className="heading">Login</h1>

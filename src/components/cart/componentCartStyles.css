@@ -60,7 +60,7 @@ p {
 span {
   font-size: 1vw;
   font-weight: 590;
-  color: black;
+  /* color: black; */
 }
 
 .quantityBtnDecrement {

@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import IndividualProductCard from "../components/IndividualProductCard";
 import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
-import PhoneSearch from "../components/PhoneSearch";
 import { useLocation, useNavigate } from "react-router-dom";
 import AccountMenu from "../components/profile/AccountMenu";
 import Skeleton from "@mui/material/Skeleton";
@@ -87,7 +86,6 @@ export default function () {
     const normalizedQuery = searchQuery
       ? String(searchQuery).toLowerCase()
       : "";
-    // let filteredProducts = data;
 
     let filteredProducts = data.filter((product) =>
       product.name.toLowerCase().includes(normalizedQuery)
@@ -353,7 +351,6 @@ export default function () {
                 <TextField
                   {...params}
                   placeholder="  ....Search products"
-                  // style={{ padding: "-3vw" }}
                   sx={{
                     boxShadow: "none",
                     borderColor: "transparent",

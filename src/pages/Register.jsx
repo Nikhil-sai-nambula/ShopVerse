@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import SuccessfullSnackBar from "../components/utilities/SuccessfullSnackBar";
+import Particles from "../components/core/Particles";
 
 export default function Register() {
   const [formData, setFormData] = useState({
@@ -126,6 +127,26 @@ export default function Register() {
 
   return (
     <div className="register-page">
+      <div
+        style={{
+          width: "100vw",
+          height: "100vh",
+          position: "fixed",
+          zIndex: "1",
+          backgroundColor: "black",
+        }}
+      >
+        <Particles
+          particleColors={["#FFFFFF", "#FFFFFF"]}
+          particleCount={200}
+          particleSpread={8}
+          speed={0.1}
+          particleBaseSize={80}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
       {!OTPTobeVerified && (
         <div className="register-box">
           <h1 className="heading">Register</h1>

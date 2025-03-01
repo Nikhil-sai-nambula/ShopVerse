@@ -21,7 +21,6 @@ export default function () {
   const location = useLocation();
   const product = location.state?.product;
   const imageList = product.imageURL;
-  //const [mainImage, setMainImage] = useState(product.imageURL[0]);
   const [quantity, setQuantity] = useState(0);
   const [size, setSize] = useState(42);
   const [selected, setSelected] = useState(false);
@@ -34,7 +33,7 @@ export default function () {
   const handleMainImage = (url) => {
     const newIndex = imageList.indexOf(url);
     if (newIndex !== -1 && sliderRef.current) {
-      sliderRef.current.slickGoTo(newIndex); // Navigate slider to clicked image
+      sliderRef.current.slickGoTo(newIndex);
     }
   };
   const handleQuantityChange = (quantity) => {
@@ -73,6 +72,18 @@ export default function () {
 
   return (
     <div className="product-info">
+      <div className="discount-bar">
+        <p
+          style={{
+            fontSize: "1vw",
+            color: "white",
+            fontWeight: "500",
+            fontFamily: "sans-serif",
+          }}
+        >
+          2025 available now, Free shipping, exchange, & returns
+        </p>
+      </div>
       <div className="product-info-main">
         <div className="product-info-image-section">
           <RenderProductSmallImg
@@ -90,8 +101,8 @@ export default function () {
         <div className="product-details">
           <ProductCardName />
           <ProductCardOneLiner />
-          <ProductCardPrice value={product.amount} />
-          <ProductCardRating />
+          <ProductCardPrice value={product.price} />
+          <ProductCardRating value={product.rating} />
           <ProductSizeSelection
             sizes={[37, 38, 39, 40, 41, 42]}
             onClick={handleSize}

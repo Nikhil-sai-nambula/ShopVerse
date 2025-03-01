@@ -147,7 +147,7 @@ html {
 }
 
 .product-info {
-  margin: 2vw;
+  /* margin: 0vw 2vw; */
 }
 
 .product-info-image-section {
@@ -156,8 +156,18 @@ html {
 }
 
 .product-info-main {
+  margin: 2vw 2vw;
   display: flex;
   gap: 6vw;
+}
+
+.discount-bar {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  padding: 0.5vw;
+  font-size: 1rem;
 }
 
 .prod-description {
@@ -204,6 +214,10 @@ html {
   display: flex;
   align-items: center;
   gap: 0.3vw;
+  z-index: 100;
+}
+.customBlurText {
+  color: wheat;
 }
 
 @media (max-width: 767px) {

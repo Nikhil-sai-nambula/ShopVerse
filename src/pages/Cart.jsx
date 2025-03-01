@@ -8,10 +8,11 @@ import CartProductHeadings from "../components/cart/CartProductHeadings";
 import CartProductLine from "../components/cart/CartProductLine";
 import CartPtoductQuantity from "../components/cart/CartProductQuantity";
 import deleteIcon from "../assets/svg/delete.svg";
-import { Skeleton, Tooltip } from "@mui/material";
+import { Skeleton, Tooltip, Typography } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import WaterfallEffect from "../components/animation/WaterFallEffect";
 import CartOrderDetails from "../components/cart/CartOrderDetails";
+import CartProductQuantity from "../components/cart/CartProductQuantity";
 
 export default function (props) {
   const { cartProducts, fetchCart, addToCart, removeFromCart, cartLoading } =
@@ -119,7 +120,6 @@ export default function (props) {
                 <div
                   style={{
                     display: "flex",
-                    // justifyContent: "center",
                     alignItems: "center",
                     flexDirection: "column",
                   }}
@@ -144,85 +144,106 @@ export default function (props) {
                 </div>
               </div>
             ))}
-          ;
           {!cartLoading && (
             <>
-              <CartProductHeadings />
-              {cartProducts.map((product, index) => (
-                <React.Fragment key={index + product?.productId}>
-                  <div className="cart-container">
-                    <CartImage url={product.imageURL} />
-                    <div className="cart-product-info">
-                      <CartProductName />
-                      <ProductCardOneLiner
-                        style={{
-                          color: "grey",
-                          fontSize: "1vw",
-                          maxWidth: "15vw",
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                          whiteSpace: "nowrap",
-                        }}
-                      />
-                      <ProductCardOneLiner
-                        value={`${"Gender  : " + gender}`}
-                        style={{
-                          fontSize: "1vw",
-                          color: "#213333",
-                          marginTop: "4vw",
-                          fontWeight: "550",
-                        }}
-                      />
-                      <ProductCardOneLiner
-                        value={`${"Size  : " + product.productSize}`}
-                        style={{
-                          fontSize: "1vw",
-                          color: "#213333",
-                          fontWeight: "550",
-                        }}
-                      />
-                    </div>
-                    <CartProductPrice
-                      price={product.price}
-                      style={{
-                        fontSize: "1.3vw",
-                        fontWeight: "550",
-                        color: "black",
-                      }}
-                    />
-                    <CartPtoductQuantity
-                      value={product.quantity}
-                      id={product.productId}
-                    />
-                    <CartProductPrice
-                      price={product.price * product.quantity}
-                      style={{
-                        fontSize: "2vw",
-                        fontWeight: "590",
-                        color: "#d4af37",
-                        marginLeft: "4vw",
-                      }}
-                    />
-                    <Tooltip title="Delete" size="md" variant="soft">
-                      <DeleteOutlineIcon
-                        sx={{
-                          color: "black",
-                          marginTop: "4.6vw",
-                          fontSize: "1.5vw",
-                          marginLeft: "1vw",
-                        }}
-                        onClick={() => handleClick(product.productId)}
-                      />
-                    </Tooltip>
-                  </div>
-                  <CartProductLine />
-                </React.Fragment>
-              ))}
+              {!cartProducts || cartProducts.length === 0 ? (
+                <>
+                  {/* <CartProductHeadings /> */}
+                  <Typography
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      fontSize: { xs: "4vw", sm: "4vw", lg: "2vw" },
+                      color: "black",
+                      cursor: "pointer",
+                      fontFamily: "monospace",
+                    }}
+                  >
+                    Oh Oh... Your Cart is Empty
+                  </Typography>
+                </>
+              ) : (
+                <>
+                  <CartProductHeadings />
+                  {cartProducts.map((product) => (
+                    <React.Fragment key={product.productId}>
+                      <div className="cart-container">
+                        <CartImage url={product.imageURL} />
+                        <div className="cart-product-info">
+                          <CartProductName />
+                          <ProductCardOneLiner
+                            style={{
+                              color: "grey",
+                              fontSize: "1vw",
+                              maxWidth: "15vw",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              whiteSpace: "nowrap",
+                            }}
+                          />
+                          {product.gender && (
+                            <ProductCardOneLiner
+                              value={`Gender: ${product.gender}`}
+                              style={{
+                                fontSize: "1vw",
+                                color: "#213333",
+                                marginTop: "4vw",
+                                fontWeight: "550",
+                              }}
+                            />
+                          )}
+                          <ProductCardOneLiner
+                            value={`Size: ${product.productSize}`}
+                            style={{
+                              fontSize: "1vw",
+                              color: "#213333",
+                              fontWeight: "550",
+                            }}
+                          />
+                        </div>
+                        <CartProductPrice
+                          price={product.price}
+                          style={{
+                            fontSize: "1.3vw",
+                            fontWeight: "550",
+                            color: "black",
+                          }}
+                        />
+                        <CartProductQuantity
+                          value={product.quantity}
+                          id={product.productId}
+                        />
+                        <CartProductPrice
+                          price={product.price * product.quantity}
+                          style={{
+                            fontSize: "2vw",
+                            fontWeight: "590",
+                            color: "#d4af37",
+                            marginLeft: "4vw",
+                          }}
+                        />
+                        <Tooltip title="Delete" size="md" variant="soft">
+                          <DeleteOutlineIcon
+                            sx={{
+                              color: "black",
+                              marginTop: "4.6vw",
+                              fontSize: "1.5vw",
+                              marginLeft: "1vw",
+                            }}
+                            onClick={() => handleClick(product.productId)}
+                          />
+                        </Tooltip>
+                      </div>
+                      <CartProductLine />
+                    </React.Fragment>
+                  ))}
+                </>
+              )}
             </>
           )}
         </div>
       </WaterfallEffect>
-      <CartOrderDetails />
+      {!cartProducts || cartProducts.length === 0 ? null : <CartOrderDetails />}
     </div>
   );
 }

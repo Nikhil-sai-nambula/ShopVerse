@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useCart } from "../../context/CartContext";
 import { Typography } from "@mui/material";
 
-const CartPtoductQuantity = (props) => {
+const CartProductQuantity = (props) => {
   const { updateQuantity } = useCart();
   const [quantity, setQuantity] = useState(props.value);
   const isFirstRender = useRef(true);
@@ -56,4 +56,4 @@ const CartPtoductQuantity = (props) => {
   );
 };
 
-export default CartPtoductQuantity;
+export default CartProductQuantity;

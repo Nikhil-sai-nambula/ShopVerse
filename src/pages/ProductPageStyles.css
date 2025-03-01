@@ -1,10 +1,19 @@
+.add-product-page {
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: auto;
+}
+
 .register-page {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background-color: #f4f4f4;
   color: black;
+  background-color: black;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
@@ -12,10 +21,12 @@
 .register-box {
   background: white;
   padding: 2vw;
+  margin: 2vw;
   border-radius: 0.7vw;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 27vw;
   text-align: center;
+  z-index: 1;
 }
 
 .form-group {
@@ -121,11 +132,43 @@ p {
   color: #007bff;
 }
 
-.login-page {
-  background-color: black;
-  height: 100vh;
+.image-previews-container {
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
 }
 
+.image-previews-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.view-products-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: whitesmoke;
+  font-family: Merriweather, serif;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+.seller-prod {
+  box-shadow: black;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.blur-text {
+  display: flex;
+  justify-content: center;
+  /* color: white; */
+  font-size: 4vw;
+}
 @media (max-width: 786px) {
   .register-page {
     margin-top: -10vw;

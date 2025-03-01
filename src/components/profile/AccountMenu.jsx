@@ -12,12 +12,14 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 import WishListModal from "../modal/WishListModal";
+import StorefrontIcon from "@mui/icons-material/Storefront";
 
-export default function AccountMenu() {
+export default function AccountMenu(props) {
   const [anchorEl, setAnchorEl] = useState(null);
   const [userDetails, setUserDetails] = useState({});
   const [isLoggedin, setIsLoggedIn] = useState(false);
   const [modalToBeDisplayed, setModalToBeDisplayed] = useState(false);
+  const user = JSON.parse(localStorage.getItem("user"));
 
   const open = Boolean(anchorEl);
   const navigate = useNavigate();
@@ -42,7 +44,7 @@ export default function AccountMenu() {
   };
 
   const handlelogin = () => {
-    navigate("/register");
+    navigate("/login");
   };
 
   const handleClose = () => {
@@ -66,11 +68,10 @@ export default function AccountMenu() {
           className="account-text"
           sx={{
             fontSize: { xs: "3vw", sm: "2vw", lg: "1.2vw" },
-            color: "white",
+            color: props?.color ? props.color : "white",
             cursor: "pointer",
             fontFamily: "Merriweather, serif",
           }}
-          onClick={() => handleWishlist()}
         >
           MyAccount
         </Typography>
@@ -117,21 +118,28 @@ export default function AccountMenu() {
                   fontSize: { xs: "2.5vw", lg: "1vw" },
                 }}
               >
-                N
+                {userDetails?.name?.charAt(0) || "N"}
               </Avatar>
               <div className="name-email">
                 <p className="name text">
-                  {userDetails?.name ? userDetails.name : "Nikhil Nambula"}
+                  {userDetails?.name || "Nikhil Nambula"}
                 </p>
                 <p className="email text">
-                  {userDetails?.email
-                    ? userDetails.email
-                    : "nambula.nikhilsai@gmail.com"}
+                  {userDetails?.email || "nambula.nikhilsai@gmail.com"}
                 </p>
               </div>
             </div>
           )}
           <div className="menu-items">
+            {user?.role === "ROLE_SELLER" && (
+              <MenuItem
+                onClick={() => navigate("/viewProducts")}
+                className="menu-item"
+              >
+                <StorefrontIcon style={{ fontSize: 24 }} />
+                <p className="menu-name">Seller DashBoard</p>
+              </MenuItem>
+            )}
             <MenuItem onClick={() => navigate("/cart")} className="menu-item">
               <ShoppingCartOutlinedIcon style={{ fontSize: 24 }} />
               <p className="menu-name">Cart</p>
@@ -156,7 +164,7 @@ export default function AccountMenu() {
               <p className="menu-name">Log Out</p>
             </MenuItem>
           </div>
-          {modalToBeDisplayed && <WishListModal />}
+          {modalToBeDisplayed && <WishListModal wishListLoading={true} />}
         </div>
       </Menu>
     </div>

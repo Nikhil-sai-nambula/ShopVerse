@@ -9,9 +9,11 @@ export default function (props) {
 
   return (
     <div className="product-price">
-      <p className="product-card-price-strike">{`${"₹" + price + ".00"}`}</p>
+      <p className="product-card-price-strike">{`${
+        "₹" + Math.round(price * 1.2) + ".00"
+      }`}</p>
       <p className="product-card-price">{`${
-        "₹" + Math.round(price * 0.8) + ".00"
+        "₹" + Math.round(price) + ".00"
       }`}</p>
     </div>
   );

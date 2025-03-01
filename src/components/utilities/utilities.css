@@ -1,0 +1,14 @@
+.seller-app-bar {
+  display: flex;
+  background-color: rgb(0, 0, 0, 0.5);
+  position: fixed;
+  box-sizing: border-box;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50vw;
+  width: 85vw;
+  margin-top: 1vw;
+  border-radius: 10vw;
+  color: white;
+  z-index: 56;
+}
