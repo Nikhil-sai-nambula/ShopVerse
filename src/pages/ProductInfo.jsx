@@ -72,7 +72,7 @@ export default function () {
 
   return (
     <div className="product-info">
-      <div className="discount-bar">
+      <div className="discount-bar" style={{ textAlign: "center" }}>
         <p
           style={{
             fontSize: "1vw",
