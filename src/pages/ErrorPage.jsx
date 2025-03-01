@@ -10,7 +10,7 @@ export default function ErrorPage(props) {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate("/products");
-    }, 500000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, [navigate]);

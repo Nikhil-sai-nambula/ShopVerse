@@ -8,7 +8,7 @@ import ErrorBoundary from "./components/utilities/ErrorBoundary";
 
 function App() {
   return (
-    // <ErrorBoundary>
+    <ErrorBoundary>
     <CartProvider>
       <AuthProvider>
         <Router>
@@ -16,7 +16,7 @@ function App() {
         </Router>
       </AuthProvider>
     </CartProvider>
-    // </ErrorBoundary>
+    </ErrorBoundary>
   );
 }
 
