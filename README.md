@@ -26,6 +26,17 @@ ShopVerse is a scalable e-commerce platform offering seamless shopping and produ
 **Frontend:** React, Material-UI, Context API  
 **Backend:** Spring Boot, MongoDB, Cloudinary
 
+## 🧪 Sample Credentials for Testing
+
+### Seller and Customer Account
+
+- **Email:** nikhil.nambula@gmail.com
+- **Password:** 123456
+
+### Customer Account
+
+- You can create an customer account, securily integrated with email verification.
+
 ## 🛠️ Setup
 
 ### Prerequisites
@@ -39,3 +50,17 @@ ShopVerse is a scalable e-commerce platform offering seamless shopping and produ
    git clone https://github.com/Nikhil-sai-nambula/ShopVerse.git && cd ShopVerse
    git clone https://github.com/Nikhil-sai-nambula/e-commerce-application.git && cd e-commerce-application
    ```
+
+### Register as Customer
+
+![Register](image.png)
+
+### OTP Verification
+
+![OTP verification](image-1.png)
+
+![OTP sent to mail](image-2.png)
+
+### Login
+
+![Login](image-3.png)

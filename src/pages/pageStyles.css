@@ -220,6 +220,10 @@ html {
   color: wheat;
 }
 
+.discount-bar {
+  display: block;
+}
+
 @media (max-width: 767px) {
   .homePage {
     display: flex;
@@ -400,5 +404,8 @@ html {
     height: 1.8vw;
     width: 2.6vw;
     margin-top: 4.5vw;
+  }
+  .discount-bar {
+    display: none;
   }
 }

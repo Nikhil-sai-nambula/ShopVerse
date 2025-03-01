@@ -179,7 +179,7 @@ export default function Register() {
               <label htmlFor="password">Password</label>
               <div className="input-wrapper">
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   id="password"
                   name="password"
                   className="input"
@@ -206,18 +206,26 @@ export default function Register() {
             }
             <div className="form-group">
               <label htmlFor="confirmPassword">Confirm password</label>
-              <input
-                type="password"
-                id="confirmPassword"
-                name="confirmPassword"
-                className="input"
-                value={confirmPassword}
-                onChange={handlePassword}
-              />
+              <div className="input-wrapper">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  className="input"
+                  value={confirmPassword}
+                  onChange={handlePassword}
+                />
+                <span
+                  className="icon"
+                  onClick={() => setShowPassword((prev) => !prev)}
+                >
+                  {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                </span>
+              </div>
+              {errors.confirmPassword && (
+                <p className="error-message">{errors.confirmPassword}</p>
+              )}
             </div>
-            {errors.confirmPassword && (
-              <p className="error-message">{errors.confirmPassword}</p>
-            )}
             <button
               className="submit"
               type="submit"
