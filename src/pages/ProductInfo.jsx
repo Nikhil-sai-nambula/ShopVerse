@@ -113,7 +113,7 @@ export default function () {
           />
           <ProductBuyNowButton />
           <p className="prod-description">{"Description"}</p>
-          <ProductDescription />
+          <ProductDescription value={product.category} />
         </div>
       </div>
     </div>
