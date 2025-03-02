@@ -451,7 +451,7 @@ export default function () {
                 <Skeleton
                   variant="text"
                   sx={{
-                    fontSize: { xs: "6vw", sm: "4vw", md: "3vw", lg: "2vw" },
+                    fontSize: { xs: "5vw", sm: "4vw", md: "3vw", lg: "2vw" },
                     width: { xs: "20vw", sm: "25vw", md: "10vw", lg: "12vw" },
                     margin: 0,
                     lineHeight: 0.9,
@@ -460,7 +460,7 @@ export default function () {
                 <Skeleton
                   variant="text"
                   sx={{
-                    fontSize: { xs: "6vw", sm: "2vw", md: "1vw", lg: "1vw" },
+                    fontSize: { xs: "5vw", sm: "2vw", md: "1vw", lg: "1vw" },
                     margin: 0,
                     lineHeight: 1,
                   }}
@@ -468,7 +468,7 @@ export default function () {
                 <Skeleton
                   variant="text"
                   sx={{
-                    fontSize: { xs: "6vw", sm: "2vw", md: "1vw", lg: "1vw" },
+                    fontSize: { xs: "5vw", sm: "2vw", md: "1vw", lg: "1vw" },
                     width: { xs: "10vw", sm: "20vw", md: "10vw", lg: "8vw" },
                     margin: 0,
                     lineHeight: 1,
