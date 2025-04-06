@@ -54,6 +54,15 @@ export default function () {
     };
   }, []);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
+      await fetch(`${apiUrl}/products/getAllProducts`);
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="homePage">
       <>
