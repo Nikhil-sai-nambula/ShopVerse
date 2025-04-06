@@ -76,6 +76,7 @@ export default function () {
     ["shirts", "M_Shirts"],
     ["pants", "M_Pants"],
     ["suits", "M_Suits"],
+    ["Dresses for Women", "W_Dresses"],
   ]);
 
   useEffect(() => {
