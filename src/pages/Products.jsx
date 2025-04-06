@@ -70,13 +70,13 @@ export default function () {
   ];
 
   const searchMap = new Map([
-    ["Men Shirts", "M_Shirts"],
-    ["Men Pants", "M_Pants"],
-    ["Suits for Men", "M_Suits"],
+    ["men shirts", "M_Shirts"],
+    ["men pants", "M_Pants"],
+    ["suits for men", "M_Suits"],
     ["shirts", "M_Shirts"],
     ["pants", "M_Pants"],
     ["suits", "M_Suits"],
-    ["Dresses for Women", "W_Dresses"],
+    ["dresses for women", "W_Dresses"],
   ]);
 
   useEffect(() => {
@@ -327,7 +327,7 @@ export default function () {
               options={searchableProducts}
               filterSelectedOptions={true}
               size="sm"
-              freeSolo={true}
+              freeSolo={false}
               onInputChange={(event, value) => setSearchQuery(value)}
               onChange={(event, value) => setSearchQuery(value || "")}
               PopperComponent={CustomPopper}
