@@ -171,7 +171,7 @@ export default function () {
         </GenericModal>
 
         <div>
-          <p
+          <div
             style={{
               fontSize: "1vw",
               color: "white",
@@ -179,8 +179,17 @@ export default function () {
               fontFamily: "sans-serif",
             }}
           >
-            2025 available now, Free shipping, exchange, & returns
-          </p>
+            <Typography
+              sx={{
+                color: "white",
+                fontWeight: "500",
+                fontFamily: "sans-serif",
+                fontSize: { xs: "2.5vw", sm: "1.5vw", lg: "1vw" },
+              }}
+            >
+              2025 available now, Free shipping, exchange, & returns
+            </Typography>
+          </div>
         </div>
       </div>
       <div className="product-info-main">
