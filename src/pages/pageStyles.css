@@ -156,14 +156,16 @@ html {
 }
 
 .product-info-main {
-  margin: 2vw 2vw;
+  margin: 1vw 2vw;
   display: flex;
   gap: 6vw;
 }
 
 .discount-bar {
   display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 50vw;
   background-color: black;
   color: white;
   padding: 0.5vw;
@@ -218,10 +220,6 @@ html {
 }
 .customBlurText {
   color: wheat;
-}
-
-.discount-bar {
-  display: block;
 }
 
 @media (max-width: 767px) {
@@ -404,8 +402,5 @@ html {
     height: 1.8vw;
     width: 2.6vw;
     margin-top: 4.5vw;
-  }
-  .discount-bar {
-    display: none;
   }
 }

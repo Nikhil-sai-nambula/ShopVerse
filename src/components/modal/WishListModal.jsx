@@ -7,7 +7,6 @@ import {
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import "./componentWishListStyles.css";
-import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import WaterfallEffect from "../animation/WaterFallEffect";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
@@ -24,8 +23,7 @@ export default function WishListModal({
 
   useEffect(() => {
     setOpen(shouldBeDisplayed);
-    console.log("Wish List Products:", wishListProds);
-  }, [shouldBeDisplayed, wishListProds]);
+  }, [shouldBeDisplayed]);
 
   const handleClose = () => {
     setShouldBeDisplayed?.(false);
@@ -49,7 +47,8 @@ export default function WishListModal({
           },
         }}
       >
-        {wishListLoading &&
+        {shouldBeDisplayed &&
+          (!wishListProds || wishListProds.length === 0) &&
           Array.from({ length: 5 }).map((_, index) => (
             <div className="wishlist-skeleton" key={index}>
               <div style={{ display: "flex", margin: "1vw", gap: "1vw" }}>
@@ -120,7 +119,11 @@ export default function WishListModal({
                           <Typography
                             sx={{
                               color: "black",
-                              fontSize: { xs: "2.4vw", lg: "1.1vw" },
+                              fontSize: {
+                                xs: "2.4vw",
+                                sm: "1.5vw",
+                                lg: "1.1vw",
+                              },
                               fontWeight: "500",
                             }}
                           >
@@ -129,7 +132,7 @@ export default function WishListModal({
                           <Typography
                             sx={{
                               color: "black",
-                              fontSize: { xs: "2vw", lg: "0.9vw" },
+                              fontSize: { xs: "2vw", sm: "1.5vw", lg: "0.9vw" },
                               fontWeight: "500",
                             }}
                           >
@@ -138,7 +141,11 @@ export default function WishListModal({
                           <div className="price" style={{ display: "flex" }}>
                             <Typography
                               sx={{
-                                fontSize: { xs: "2vw", lg: "0.9vw" },
+                                fontSize: {
+                                  xs: "2vw",
+                                  sm: "1.5vw",
+                                  lg: "0.9vw",
+                                },
                                 fontWeight: "500",
                               }}
                             >
@@ -150,6 +157,10 @@ export default function WishListModal({
                           <div
                             onMouseEnter={() => setIsHovered(index)}
                             onMouseLeave={() => setIsHovered(false)}
+                            onClick={() =>
+                              handleRemoveFromWishList(product?.productId)
+                            }
+                            style={{ cursor: "pointer" }}
                           >
                             {isHovered === index ? (
                               <DeleteForeverIcon

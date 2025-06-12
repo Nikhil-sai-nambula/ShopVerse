@@ -97,7 +97,7 @@ export default function UpdateProduct() {
     }
   };
 
-  if (!product) {
+  if (!loading && !product) {
     return <div>No product found!</div>;
   }
 

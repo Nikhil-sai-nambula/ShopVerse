@@ -20,6 +20,7 @@ span {
 }
 
 .main-image {
+  z-index: -9999;
   height: 44vw;
   width: 35vw;
 }
@@ -155,6 +156,28 @@ span {
   justify-content: center;
 }
 
+.exchange-info {
+  display: flex;
+  justify-content: center;
+  gap: 10vw;
+  background-color: rgb(246, 246, 246);
+}
+
+.exc-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 4vw;
+  color: black;
+  margin: 1vw;
+}
+
+.exc-text {
+  text-align: center;
+  margin-top: 1vw;
+  font-size: 1.3vw;
+}
+
 @media (max-width: 767px) {
   .small-image {
     width: 15vw;
@@ -169,6 +192,7 @@ span {
   }
 
   .main-image {
+    z-index: -9999;
     height: 120vw;
     width: 100vw;
   }
@@ -279,5 +303,19 @@ span {
   }
   .sizetext {
     font-size: 5vw;
+  }
+
+  .exchange-info {
+    gap: 8vw;
+  }
+
+  .exc-info {
+    font-size: 8vw;
+    margin: 3vw;
+  }
+
+  .exc-text {
+    margin-top: 1vw;
+    font-size: 2.4vw;
   }
 }

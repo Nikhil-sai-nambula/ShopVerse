@@ -3,7 +3,6 @@ import ProductName from "./product/ProductName";
 import ProductOneLiner from "./product/ProductOneLiner";
 import RatingInfo from "./RatingInfo";
 import { useEffect, useState } from "react";
-import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Slider from "react-slick";
@@ -54,7 +53,6 @@ export default function (props) {
     if (newFaviouriteState) {
       props.addToWishList(props.product);
     } else {
-      console.log(props.product);
       props.removeFromWishList(props.product.id);
     }
   };
@@ -83,7 +81,6 @@ export default function (props) {
       const interval = setInterval(() => {
         setCurrentImage((prevImg) => (prevImg + 1) % props?.url?.length);
       }, 1000);
-      console.log(props.url);
       return () => clearInterval(interval);
     }
   }, [isHovering, props?.url?.length]);

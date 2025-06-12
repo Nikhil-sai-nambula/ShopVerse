@@ -8,6 +8,7 @@ import WaterfallEffect from "../components/animation/WaterFallEffect";
 import { Box, Button, Modal, Typography } from "@mui/material";
 import BlurText from "../components/core/BlurText";
 import AccountMenu from "../components/profile/AccountMenu";
+import _ from "lodash";
 
 const style = {
   position: "absolute",
@@ -33,9 +34,9 @@ export default function () {
   const user = JSON.parse(localStorage.getItem("user"));
 
   const [isFixed, setIsFixed] = useState(false);
-  const [open, setOpen] = React.useState(false);
-  const [parentOpen, setParentOpen] = React.useState(false);
-  const [childOpen, setChildOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [parentOpen, setParentOpen] = useState(false);
+  const [childOpen, setChildOpen] = useState(false);
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -61,6 +62,15 @@ export default function () {
     };
 
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = _.throttle(() => {
+      // update minimal state here
+    }, 100); // using lodash throttle
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -252,7 +262,7 @@ export default function () {
             }}
           />
           <BlurText
-            text="Experience the Experience"
+            text="Experience the Excellence"
             delay={150}
             animateBy="words"
             direction="top"

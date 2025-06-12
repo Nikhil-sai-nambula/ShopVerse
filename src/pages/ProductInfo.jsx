@@ -15,18 +15,25 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { useCart } from "../context/CartContext";
+import ProductInfoExchange from "../components/product/ProductInfoExchange";
+import Footer from "../components/footer/Footer";
+import GenericModal from "../components/modal/GenericModal";
+import { Button, Typography } from "@mui/material";
 
 export default function () {
   const { productId } = useParams();
   const location = useLocation();
+  const navigate = useNavigate();
+  const sliderRef = useRef(null);
   const product = location.state?.product;
   const imageList = product.imageURL;
   const [quantity, setQuantity] = useState(0);
   const [size, setSize] = useState(42);
   const [selected, setSelected] = useState(false);
+  const [parentOpen, setParentOpen] = useState(false);
+  const [childOpen, setChildOpen] = useState(false);
   const { cartProducts, addToCart } = useCart();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const sliderRef = useRef(null);
 
   const mainImage = imageList[currentSlide];
 
@@ -53,11 +60,6 @@ export default function () {
     setSize(selectedSize);
   };
 
-  useEffect(() => {
-    console.log(size);
-    console.log(cartProducts);
-  }, [cartProducts, size]);
-
   const slickSettings = {
     infinite: true,
     speed: 500,
@@ -73,16 +75,113 @@ export default function () {
   return (
     <div className="product-info">
       <div className="discount-bar" style={{ textAlign: "center" }}>
-        <p
-          style={{
-            fontSize: "1vw",
-            color: "white",
-            fontWeight: "500",
-            fontFamily: "sans-serif",
-          }}
+        <GenericModal
+          open={parentOpen}
+          onClose={() => setParentOpen(false)}
+          sx={{ width: "auto" }}
         >
-          2025 available now, Free shipping, exchange, & returns
-        </p>
+          <Typography
+            sx={{
+              fontSize: { xs: "4vw", sm: "2vw", lg: "1.5vw" },
+              color: "#d4af37",
+              cursor: "pointer",
+              fontFamily: "Merriweather, serif",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            Hey User 👋
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: { xs: "2vw", sm: "2vw", lg: "1vw" },
+              color: "black",
+              cursor: "pointer",
+              fontFamily: "Merriweather, serif",
+              textAlign: "center",
+            }}
+          >
+            Log in to unlock seamless access to everything we offer.
+          </Typography>
+
+          <Button
+            sx={{
+              display: "flex",
+              justifySelf: "center",
+              width: "auto",
+              bgcolor: "black",
+              color: "white",
+              marginTop: "1vw",
+            }}
+            onClick={() => setChildOpen(true)}
+          >
+            More Info
+          </Button>
+          <Button
+            sx={{
+              display: "flex",
+              justifySelf: "center",
+              width: "auto",
+              bgcolor: "black",
+              color: "white",
+              marginTop: "0.5vw",
+            }}
+            onClick={() => navigate("/login")}
+          >
+            Login
+          </Button>
+        </GenericModal>
+
+        <GenericModal
+          open={childOpen}
+          onClose={() => setChildOpen(false)}
+          sx={{ bgcolor: "white", width: "auto" }}
+        >
+          <Typography
+            sx={{
+              fontSize: { xs: "3vw", sm: "2vw", lg: "1.3vw" },
+              color: "black",
+              cursor: "pointer",
+              fontFamily: "Merriweather, serif",
+            }}
+          >
+            You can test this application with following credentials
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: { xs: "3vw", sm: "2vw", lg: "1vw" },
+              color: "grey",
+              cursor: "pointer",
+              fontFamily: "Merriweather, serif",
+              marginTop: "1vw",
+            }}
+          >
+            mail : nikhil.nambula@gmail.com
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: { xs: "3vw", sm: "2vw", lg: "1vw" },
+              color: "grey",
+              cursor: "pointer",
+              fontFamily: "Merriweather, serif",
+            }}
+          >
+            password : 123456
+          </Typography>
+        </GenericModal>
+
+        <div>
+          <p
+            style={{
+              fontSize: "1vw",
+              color: "white",
+              fontWeight: "500",
+              fontFamily: "sans-serif",
+            }}
+          >
+            2025 available now, Free shipping, exchange, & returns
+          </p>
+        </div>
       </div>
       <div className="product-info-main">
         <div className="product-info-image-section">
@@ -109,13 +208,26 @@ export default function () {
           />
           <ProductAddToCart
             onQuantityChange={handleQuantityChange}
-            onClickingAddToCart={handleAddToCart}
+            onClickingAddToCart={() => {
+              const user = JSON.parse(localStorage.getItem("user"));
+              console.log(user);
+              if (user && user.userId) {
+                handleAddToCart();
+              } else {
+                setParentOpen(true);
+              }
+            }}
+            // { handleAddToCart }
           />
           <ProductBuyNowButton />
           <p className="prod-description">{"Description"}</p>
           <ProductDescription value={product.category} />
         </div>
       </div>
+      <ProductInfoExchange />
+      {/* <WaterfallEffect> */}
+      <Footer />
+      {/* </WaterfallEffect> */}
     </div>
   );
 }

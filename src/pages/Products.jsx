@@ -7,6 +7,7 @@ import Skeleton from "@mui/material/Skeleton";
 import WaterfallEffect from "../components/animation/WaterFallEffect";
 import {
   Autocomplete,
+  Button,
   Paper,
   Popper,
   styled,
@@ -16,12 +17,14 @@ import {
 import WishListModal from "../components/modal/WishListModal";
 import ShoppingCartOutlineIcon from "@mui/icons-material/ShoppingCart";
 import axios from "axios";
+import Footer from "../components/footer/Footer";
+import GenericModal from "../components/modal/GenericModal";
 
 const CustomPopper = styled(Popper)({
   "& .MuiAutocomplete-paper": {
     backgroundColor: "#fff",
     borderRadius: "8px",
-    margin: { xs: "5vw", sm: "5vw", lg: "0.7vw" },
+    margin: { xs: "5vw", sm: "4.5vw", lg: "0.7vw" },
     boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
   },
 });
@@ -33,7 +36,8 @@ const CustomPaper = (props) => (
       backgroundColor: "#fff",
       borderRadius: "8px",
       boxShadow: "0px 4px 10px rgba(0,0,0,0.2)",
-      fontSize: { xs: "2vw", lg: "1vw" },
+      fontSize: { xs: "2vw", sm: "1.5vw", lg: "1vw" },
+
       "& .MuiAutocomplete-option": {
         padding: { xs: "0vw 3vw", lg: "0.5vw 1.2vw" },
         borderBottom: "1px solid #eee",
@@ -47,6 +51,7 @@ const CustomPaper = (props) => (
     }}
   />
 );
+
 export default function () {
   const [isFixed, setIsFixed] = useState(false);
   const [data, setData] = useState([]);
@@ -61,6 +66,12 @@ export default function () {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredData, setFilteredData] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [parentOpen, setParentOpen] = useState(false);
+  const [childOpen, setChildOpen] = useState(false);
+
+  const isMobile = window.innerWidth <= 768;
+  const displayData = null;
 
   const searchableProducts = [
     "Men Shirts",
@@ -116,8 +127,11 @@ export default function () {
         );
       }
     }
-    console.log("data is ", data);
-    console.log(filteredProducts, " query ", searchQuery);
+
+    if (isMobile && filteredProducts.length % 2 !== 0) {
+      setFilteredData(filteredProducts.slice(0, filteredProducts.length - 1));
+    }
+
     setFilteredData(filteredProducts);
   }, [searchQuery, data]);
 
@@ -305,6 +319,101 @@ export default function () {
           className={`product-bar ${isFixed ? "fixed" : "relative"}`}
           id="productBar"
         >
+          <GenericModal
+            open={parentOpen}
+            onClose={() => setParentOpen(false)}
+            sx={{ width: "auto" }}
+          >
+            <Typography
+              sx={{
+                fontSize: { xs: "4vw", sm: "2vw", lg: "1.5vw" },
+                color: "#d4af37",
+                cursor: "pointer",
+                fontFamily: "Merriweather, serif",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              Hey User 👋
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: { xs: "2vw", sm: "2vw", lg: "1vw" },
+                color: "black",
+                cursor: "pointer",
+                fontFamily: "Merriweather, serif",
+                textAlign: "center",
+              }}
+            >
+              Log in to unlock seamless access to everything we offer.
+            </Typography>
+
+            <Button
+              sx={{
+                display: "flex",
+                justifySelf: "center",
+                width: "auto",
+                bgcolor: "black",
+                color: "white",
+                marginTop: "1vw",
+              }}
+              onClick={() => setChildOpen(true)}
+            >
+              More Info
+            </Button>
+            <Button
+              sx={{
+                display: "flex",
+                justifySelf: "center",
+                width: "auto",
+                bgcolor: "black",
+                color: "white",
+                marginTop: "0.5vw",
+              }}
+              onClick={() => navigate("/login")}
+            >
+              Login
+            </Button>
+          </GenericModal>
+
+          <GenericModal
+            open={childOpen}
+            onClose={() => setChildOpen(false)}
+            sx={{ bgcolor: "white", width: "auto" }}
+          >
+            <Typography
+              sx={{
+                fontSize: { xs: "3vw", sm: "2vw", lg: "1.3vw" },
+                color: "black",
+                cursor: "pointer",
+                fontFamily: "Merriweather, serif",
+              }}
+            >
+              You can test this application with following credentials
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: { xs: "3vw", sm: "2vw", lg: "1vw" },
+                color: "grey",
+                cursor: "pointer",
+                fontFamily: "Merriweather, serif",
+                marginTop: "1vw",
+              }}
+            >
+              mail : nikhil.nambula@gmail.com
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: { xs: "3vw", sm: "2vw", lg: "1vw" },
+                color: "grey",
+                cursor: "pointer",
+                fontFamily: "Merriweather, serif",
+              }}
+            >
+              password : 123456
+            </Typography>
+          </GenericModal>
+
           <Typography
             sx={{
               fontSize: { xs: "3.8vw", sm: "3vw", lg: "2.5vw" },
@@ -336,13 +445,17 @@ export default function () {
                 "& .MuiAutocomplete-popupIndicator": {
                   display: "none",
                 },
-                padding: { xs: "1.2vw", lg: "0vw" },
-                paddingLeft: { xs: "1vw", lg: "1vw" },
+                padding: { xs: "1.2vw", sm: "0vw", lg: "0vw" },
+                paddingLeft: { xs: "1vw", sm: "1.2vw", lg: "1vw" },
                 paddingRight: { xs: "1vw", lg: "1vw" },
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                width: { xs: "25vw", lg: "15vw" },
+                width: {
+                  xs: "25vw",
+                  sm: "18vw",
+                  lg: "15vw",
+                },
                 height: { xs: "3vw", lg: "2.5vw" },
                 backgroundColor: "white",
                 borderRadius: "2vw",
@@ -371,7 +484,7 @@ export default function () {
                         borderColor: "transparent",
                       },
                       "& .MuiInputBase-input": {
-                        fontSize: { xs: "2vw", sm: "1vw", lg: "1vw" },
+                        fontSize: { xs: "2vw", sm: "1.5vw", lg: "1vw" },
                         fontWeight: { lg: "600" },
                         padding: { xs: "0vw", sm: "0vw", lg: "0.5vw" },
                       },
@@ -393,7 +506,14 @@ export default function () {
                 cursor: "pointer",
                 fontFamily: "Merriweather, serif",
               }}
-              onClick={() => handleWishlist()}
+              onClick={() => {
+                const user = JSON.parse(localStorage.getItem("user"));
+                if (user && user.userId) {
+                  handleWishlist();
+                } else {
+                  setParentOpen(true);
+                }
+              }}
             >
               Wishlist
             </Typography>
@@ -404,7 +524,14 @@ export default function () {
                 cursor: "pointer",
                 fontFamily: "Merriweather, serif",
               }}
-              onClick={() => navigate("/cart")}
+              onClick={() => {
+                const user = JSON.parse(localStorage.getItem("user"));
+                if (user && user.userId) {
+                  navigate("/cart");
+                } else {
+                  setParentOpen(true);
+                }
+              }}
             >
               Cart
             </Typography>
@@ -494,11 +621,11 @@ export default function () {
             ))}
           </div>
         )}
-        {filteredData.length === 0 && (
+        {/* {filteredData && filteredData.length === 0 && (
           <Typography sx={{ fontSize: { lg: "3vw" } }}>
             Oh Oh... ! Product Not Found
           </Typography>
-        )}
+        )} */}
         {filteredData && (
           <div className="indv-prod-disp">
             {filteredData.map((product, index) => (
@@ -521,6 +648,7 @@ export default function () {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 }

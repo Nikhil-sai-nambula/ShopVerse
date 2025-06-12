@@ -15,8 +15,8 @@ import { useState } from "react";
 
 export default function () {
   const [snackBarToBeShown, setSnackBarToBeShown] = useState(false);
-  let headingSize = "1.4vw";
-  let subHeadingSize = "1vw";
+  let headingSize = "1.5vw";
+  let subHeadingSize = "1.3vw";
 
   const commonFontStyle = {
     fontFamily: "Merriweather, serif",
@@ -26,14 +26,14 @@ export default function () {
 
   const iconStyle = {
     color: "#d4af37",
-    fontSize: { xs: "5vw", sm: "5vw", lg: "2vw" },
+    fontSize: { xs: "5vw", sm: "3vw", lg: "2vw" },
     borderRadius: "10vw",
     cursor: "pointer",
   };
 
   const contactIconStyle = {
     color: "#d4af37",
-    fontSize: { xs: "4vw", sm: "4vw", lg: "1.5vw" },
+    fontSize: { xs: "4vw", sm: "1.3vw", lg: "1.3vw" },
     borderRadius: "10vw",
     cursor: "pointer",
   };
@@ -47,7 +47,7 @@ export default function () {
               <Typography
                 sx={{
                   ...commonFontStyle,
-                  fontSize: { xs: "5vw", sm: "5vw", lg: "1.5vw" },
+                  fontSize: { xs: "4vw", sm: "2vw", lg: "1.5vw" },
                   color: "#d4af37",
                 }}
               >
@@ -56,7 +56,7 @@ export default function () {
               <Typography
                 sx={{
                   ...commonFontStyle,
-                  fontSize: { xs: "3vw", sm: "3vw", lg: "1.2vw" },
+                  fontSize: { xs: "3vw", sm: "1.3vw", lg: "1.2vw" },
                 }}
               >
                 Your Ultimate Shopping Destination
@@ -66,7 +66,7 @@ export default function () {
               <Typography
                 sx={{
                   ...commonFontStyle,
-                  fontSize: { xs: "4vw", sm: "4vw", lg: "1.2vw" },
+                  fontSize: { xs: "4vw", sm: "2vw", lg: "1.5vw" },
                   color: "#d4af37",
                 }}
               >
@@ -75,8 +75,8 @@ export default function () {
               <Typography
                 sx={{
                   ...commonFontStyle,
-                  fontSize: { xs: "3vw", sm: "3vw", lg: "1vw" },
-                  width: { xs: "60vw", sm: "65vw", lg: "20vw" },
+                  fontSize: { xs: "3vw", sm: "1.3vw", lg: "1vw" },
+                  width: { xs: "60vw", sm: "30vw", lg: "20vw" },
                 }}
               >
                 Discover the finest products, curated for an exceptional
@@ -87,7 +87,7 @@ export default function () {
               <Typography
                 sx={{
                   ...commonFontStyle,
-                  fontSize: { xs: "4vw", sm: "4vw", lg: "1.2vw" },
+                  fontSize: { xs: "4vw", sm: "2vw", lg: "1.5vw" },
                   color: "#d4af37",
                 }}
               >
@@ -98,7 +98,7 @@ export default function () {
                 <Typography
                   sx={{
                     ...commonFontStyle,
-                    fontSize: { xs: "3vw", sm: "3vw", lg: "1vw" },
+                    fontSize: { xs: "3vw", sm: "1.3vw", lg: "1vw" },
                   }}
                 >
                   +91 63050-57714
@@ -109,7 +109,7 @@ export default function () {
                 <Typography
                   sx={{
                     ...commonFontStyle,
-                    fontSize: { xs: "3vw", sm: "3vw", lg: "1vw" },
+                    fontSize: { xs: "3vw", sm: "1.3vw", lg: "1vw" },
                   }}
                 >
                   nambula.nikhilsai@gmail.com
@@ -120,55 +120,110 @@ export default function () {
         </div>
         <div className="footer-column2">
           <WaterfallEffect>
-            <MainHeading
-              value={"Information"}
-              style={{ fontSize: headingSize, color: "#d4af37" }}
-            />
-            <MainHeading
-              value={"About Us"}
-              style={{ fontSize: subHeadingSize }}
-            />
-            <MainHeading
-              value={"More Search"}
-              style={{ fontSize: subHeadingSize }}
-            />
-            <MainHeading value={"Blogs"} style={{ fontSize: subHeadingSize }} />
-            <MainHeading
-              value={"Testimonials"}
-              style={{ fontSize: subHeadingSize }}
-            />
-            <MainHeading
-              value={"Events"}
-              style={{ fontSize: subHeadingSize }}
-            />
+            <Typography
+              sx={{
+                ...commonFontStyle,
+                fontSize: { xs: "4vw", sm: "2vw", lg: "1.5vw" },
+                color: "#d4af37",
+              }}
+            >
+              Information
+            </Typography>
+            <Typography
+              sx={{
+                ...commonFontStyle,
+                fontSize: { xs: "3vw", sm: "1.3vw", lg: "1vw" },
+              }}
+            >
+              About Us
+            </Typography>
+            <Typography
+              sx={{
+                ...commonFontStyle,
+                fontSize: { xs: "3vw", sm: "1.3vw", lg: "1vw" },
+              }}
+            >
+              More Search
+            </Typography>
+            <Typography
+              sx={{
+                ...commonFontStyle,
+                fontSize: { xs: "3vw", sm: "1.3vw", lg: "1vw" },
+              }}
+            >
+              Blogs
+            </Typography>
+
+            <Typography
+              sx={{
+                ...commonFontStyle,
+                fontSize: { xs: "3vw", sm: "1.3vw", lg: "1vw" },
+              }}
+            >
+              Testimonials
+            </Typography>
+            <Typography
+              sx={{
+                ...commonFontStyle,
+                fontSize: { xs: "3vw", sm: "1.3vw", lg: "1vw" },
+              }}
+            >
+              Events
+            </Typography>
           </WaterfallEffect>
         </div>
         <div className="footer-column2">
           <WaterfallEffect>
-            <MainHeading
-              value={"Helpful Links"}
-              style={{ fontSize: headingSize, color: "#d4af37" }}
-            />
-            <MainHeading
-              value={"Services"}
-              style={{ fontSize: subHeadingSize }}
-            />
-            <MainHeading
-              value={"Supports"}
-              style={{ fontSize: subHeadingSize }}
-            />
-            <MainHeading
-              value={"Terms & Conditions"}
-              style={{ fontSize: subHeadingSize }}
-            />
-            <MainHeading
-              value={"Privacy Policy"}
-              style={{ fontSize: subHeadingSize }}
-            />
-            <MainHeading
-              value={"Events"}
-              style={{ fontSize: subHeadingSize }}
-            />
+            <Typography
+              sx={{
+                ...commonFontStyle,
+                fontSize: { xs: "4vw", sm: "2vw", lg: "1.5vw" },
+                color: "#d4af37",
+              }}
+            >
+              Helpful Links
+            </Typography>
+            <Typography
+              sx={{
+                ...commonFontStyle,
+                fontSize: { xs: "3vw", sm: "1.3vw", lg: "1vw" },
+              }}
+            >
+              Services
+            </Typography>
+            <Typography
+              sx={{
+                ...commonFontStyle,
+                fontSize: { xs: "3vw", sm: "1.3vw", lg: "1vw" },
+              }}
+            >
+              Support
+            </Typography>
+            <Typography
+              sx={{
+                ...commonFontStyle,
+                fontSize: { xs: "3vw", sm: "1.3vw", lg: "1vw" },
+              }}
+            >
+              Terms & Conditions
+            </Typography>
+
+            <Typography
+              sx={{
+                ...commonFontStyle,
+                fontSize: { xs: "3vw", sm: "1.3vw", lg: "1vw" },
+              }}
+            >
+              Privacy Policy
+            </Typography>
+            <Typography
+              sx={{
+                ...commonFontStyle,
+                fontSize: { xs: "3vw", sm: "1.3vw", lg: "1vw" },
+              }}
+            >
+              Events
+            </Typography>
           </WaterfallEffect>
         </div>
         <div className="footer-line-1"></div>
@@ -177,8 +232,8 @@ export default function () {
             <Typography
               sx={{
                 ...commonFontStyle,
-                fontSize: { xs: "3vw", sm: "3vw", lg: "1vw" },
-                marginLeft: "2.5vw",
+                fontSize: { xs: "3vw", sm: "2vw", lg: "1.5vw" },
+                marginLeft: "2vw",
               }}
             >
               Subscribe for More

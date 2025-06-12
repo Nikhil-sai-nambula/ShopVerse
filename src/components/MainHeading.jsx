@@ -5,7 +5,6 @@ export default function (props) {
 
   const handleclick = (route) => {
     if (route == null) route = "/";
-    console.log(route);
     navigate(route);
   };
 

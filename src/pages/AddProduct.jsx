@@ -77,7 +77,6 @@ export default function AddProduct() {
           formData.append(`imageURL`, file);
         });
 
-        console.log(formData);
         const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
 
         const response = await axios.post(

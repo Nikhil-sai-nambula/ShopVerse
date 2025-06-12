@@ -164,7 +164,11 @@ export default function AccountMenu(props) {
               <p className="menu-name">Log Out</p>
             </MenuItem>
           </div>
-          {modalToBeDisplayed && <WishListModal wishListLoading={true} />}
+          <WishListModal
+            shouldBeDisplayed={modalToBeDisplayed}
+            setShouldBeDisplayed={setModalToBeDisplayed}
+            wishListLoading={true}
+          />
         </div>
       </Menu>
     </div>

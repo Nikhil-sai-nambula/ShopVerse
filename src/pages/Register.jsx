@@ -242,6 +242,9 @@ export default function Register() {
               <p onClick={() => navigate("/login")}>
                 Registered already ? Login
               </p>
+              <p onClick={() => navigate("/")} style={{ marginTop: "1vw" }}>
+                Back To Home
+              </p>
             </u>
           }
         </div>
@@ -279,13 +282,15 @@ export default function Register() {
               </p>
             )}
             {
-              <p
-                className="login-to-register"
-                style={{ marginBottom: "-2vw" }}
-                onClick={() => navigate("/login")}
-              >
-                <u>Back to Login Page</u>
-              </p>
+              <>
+                <p
+                  className="login-to-register"
+                  style={{ marginBottom: "-2vw" }}
+                  onClick={() => navigate("/login")}
+                >
+                  <u>Back to Login Page</u>
+                </p>
+              </>
             }
           </div>
         </div>

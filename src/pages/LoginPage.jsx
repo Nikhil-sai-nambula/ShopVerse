@@ -8,6 +8,9 @@ import { useCart } from "../context/CartContext";
 import SuccessfullSnackBar from "../components/utilities/SuccessfullSnackBar";
 import Particles from "../components/core/Particles";
 import "./authPageStyles.css";
+import HeaderSymbol from "../components/utilities/HeaderSymbol";
+import appImage from ".././assets/images/clothes-suit-svgrepo-com.svg";
+import { Box } from "@mui/material";
 
 export default function Login() {
   const { login } = useContext(AuthContext);
@@ -166,6 +169,9 @@ export default function Login() {
                 onClick={() => navigate("/register")}
               >
                 Haven't registered Yet ?
+              </p>
+              <p className="login-to-register" onClick={() => navigate("/")}>
+                Back To HomePage
               </p>
             </u>
           }
