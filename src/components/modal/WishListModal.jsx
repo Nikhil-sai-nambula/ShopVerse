@@ -39,7 +39,7 @@ export default function WishListModal({
         PaperProps={{
           sx: {
             width: {
-              xs: "60vw",
+              xs: "66vw",
               sm: "50vw",
               md: "30vw",
               lg: "30vw",

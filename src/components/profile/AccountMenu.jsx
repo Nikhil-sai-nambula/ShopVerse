@@ -5,14 +5,13 @@ import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import "./AccountMenu.css";
-import SubHeading1 from "../SubHeading1";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
-import WishListModal from "../modal/WishListModal";
 import StorefrontIcon from "@mui/icons-material/Storefront";
+import { BiSupport } from "react-icons/bi";
 
 export default function AccountMenu(props) {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -102,7 +101,13 @@ export default function AccountMenu(props) {
             <div className="menu-items">
               <MenuItem onClick={handlelogin} className="menu-item">
                 <HowToRegIcon style={{ fontSize: 24 }} />
-                <p className="menu-name">SignIn/ SignUp</p>
+                <Typography
+                  className="menu-name"
+                  style={{ margin: "0vw" }}
+                  fontSize={{ xs: "3vw", lg: "1.2vw" }}
+                >
+                  SignIn / SignUp
+                </Typography>{" "}
               </MenuItem>
             </div>
           )}
@@ -163,17 +168,14 @@ export default function AccountMenu(props) {
                 Cart
               </Typography>
             </MenuItem>
-            <MenuItem
-              onClick={() => setModalToBeDisplayed(true)}
-              className="menu-item"
-            >
-              <FavoriteOutlinedIcon style={{ fontSize: 24 }} />
+            <MenuItem className="menu-item">
+              <BiSupport style={{ fontSize: 24 }} />
               <Typography
                 className="menu-name"
                 style={{ margin: "0vw" }}
                 fontSize={{ xs: "3vw", lg: "1.2vw" }}
               >
-                Wish List
+                Support
               </Typography>
             </MenuItem>
             <MenuItem onClick={handleClose} className="menu-item">
@@ -207,11 +209,6 @@ export default function AccountMenu(props) {
               </Typography>
             </MenuItem>
           </div>
-          <WishListModal
-            shouldBeDisplayed={modalToBeDisplayed}
-            setShouldBeDisplayed={setModalToBeDisplayed}
-            wishListLoading={true}
-          />
         </div>
       </Menu>
     </div>

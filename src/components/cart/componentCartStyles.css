@@ -141,3 +141,22 @@ span {
 .coupon {
   padding: 0.6vw;
 }
+
+@media screen {
+  .order-details {
+    display: none;
+  }
+
+  .cart-product-name {
+    color: black;
+    font-size: 1.4vw;
+    font-weight: 550;
+    margin-top: 0.5vw;
+  }
+
+  .cart-product-image {
+    height: 11vw;
+    width: 9vw;
+    border-radius: 1vw;
+  }
+}
