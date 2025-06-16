@@ -29,7 +29,7 @@ export default function ViewProucts() {
       console.log(user);
       try {
         const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
-        const response = await axios.get(`${apiUrl}/seller/${user?.userId}`, {
+        const response = await axios.get(`${apiUrl}m/seller/${user?.userId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 

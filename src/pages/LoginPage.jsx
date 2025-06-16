@@ -45,7 +45,7 @@ export default function Login() {
     try {
       setIsLoading(true);
       const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
-      const response = await axios.post(`${apiUrl}/auth/login`, formData);
+      const response = await axios.post(`${apiUrl}m/auth/login`, formData);
 
       if (response.status === 200) {
         setSnackBarToBeShown(true);

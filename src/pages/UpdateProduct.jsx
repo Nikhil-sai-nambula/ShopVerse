@@ -76,7 +76,7 @@ export default function UpdateProduct() {
       const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
 
       const response = await axios.put(
-        `${apiUrl}/seller/product/update/${product.id}`,
+        `${apiUrl}m/seller/product/update/${product.id}`,
         formData,
         {
           headers: {

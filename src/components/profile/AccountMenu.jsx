@@ -91,8 +91,8 @@ export default function AccountMenu(props) {
         sx={{
           "& .MuiPaper-root": {
             borderRadius: "12px",
-            marginTop: "8px",
-            width: { xs: "33vw", lg: "20vw" },
+            marginTop: { xs: "3vw", lg: "1vw" },
+            width: { xs: "50vw", sm: "30vw", lg: "20vw" },
             boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
           },
         }}
@@ -113,8 +113,8 @@ export default function AccountMenu(props) {
                 sx={{
                   bgcolor: "#FFD700",
                   color: "black",
-                  width: { xs: 30, lg: 40 },
-                  height: { xs: 30, lg: 40 },
+                  width: { xs: 40, lg: 40 },
+                  height: { xs: 40, lg: 40 },
                   fontSize: { xs: "2.5vw", lg: "1vw" },
                 }}
               >
@@ -135,33 +135,76 @@ export default function AccountMenu(props) {
               <MenuItem
                 onClick={() => navigate("/viewProducts")}
                 className="menu-item"
+                sx={{ margin: "0vw" }}
               >
-                <StorefrontIcon style={{ fontSize: 24 }} />
-                <p className="menu-name">Seller DashBoard</p>
+                <StorefrontIcon
+                  style={{ fontSize: { xs: "3vw", lg: "1.3vw" } }}
+                />
+                <Typography
+                  className="menu-name"
+                  style={{ margin: "0vw" }}
+                  fontSize={{ xs: "3vw", lg: "1.2vw" }}
+                >
+                  Seller DashBoard
+                </Typography>
               </MenuItem>
             )}
-            <MenuItem onClick={() => navigate("/cart")} className="menu-item">
+            <MenuItem
+              onClick={() => navigate("/cart")}
+              className="menu-item"
+              sx={{ margin: "0vw" }}
+            >
               <ShoppingCartOutlinedIcon style={{ fontSize: 24 }} />
-              <p className="menu-name">Cart</p>
+              <Typography
+                className="menu-name"
+                style={{ margin: "0vw" }}
+                fontSize={{ xs: "3vw", lg: "1.2vw" }}
+              >
+                Cart
+              </Typography>
             </MenuItem>
             <MenuItem
               onClick={() => setModalToBeDisplayed(true)}
               className="menu-item"
             >
               <FavoriteOutlinedIcon style={{ fontSize: 24 }} />
-              <p className="menu-name">Wish List</p>
+              <Typography
+                className="menu-name"
+                style={{ margin: "0vw" }}
+                fontSize={{ xs: "3vw", lg: "1.2vw" }}
+              >
+                Wish List
+              </Typography>
             </MenuItem>
             <MenuItem onClick={handleClose} className="menu-item">
               <LocalShippingOutlinedIcon style={{ fontSize: 24 }} />
-              <p className="menu-name">Orders</p>
+              <Typography
+                className="menu-name"
+                style={{ margin: "0vw" }}
+                fontSize={{ xs: "3vw", lg: "1.2vw" }}
+              >
+                Orders
+              </Typography>
             </MenuItem>
             <MenuItem onClick={handleClose} className="menu-item">
               <SettingsOutlinedIcon style={{ fontSize: 24 }} />
-              <p className="menu-name">Settings</p>
+              <Typography
+                className="menu-name"
+                style={{ margin: "0vw" }}
+                fontSize={{ xs: "3vw", lg: "1.2vw" }}
+              >
+                Settings
+              </Typography>
             </MenuItem>
             <MenuItem onClick={handleLogout} className="menu-item">
               <LogoutOutlinedIcon style={{ fontSize: 24 }} />
-              <p className="menu-name">Log Out</p>
+              <Typography
+                className="menu-name"
+                style={{ margin: "0vw" }}
+                fontSize={{ xs: "3vw", lg: "1.2vw" }}
+              >
+                Log out
+              </Typography>
             </MenuItem>
           </div>
           <WishListModal

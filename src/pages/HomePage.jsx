@@ -58,7 +58,7 @@ export default function () {
   useEffect(() => {
     const fetchData = async () => {
       const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
-      await fetch(`${apiUrl}/products/getAllProducts`);
+      await fetch(`${apiUrl}m/products/getAllProducts`);
     };
 
     fetchData();
@@ -238,66 +238,39 @@ export default function () {
       </div>
 
       <div className="homePage1">
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <BlurText
-            text="Welcome to ShopVerse "
-            delay={150}
-            animateBy="words"
-            direction="top"
-            className="customBlurText"
-            style={{
-              fontSize: "2.5vw",
-              color: "white",
-              fontWeight: "bold",
-              fontFamily: "Merriweather,serif",
-              marginTop: "20vw",
-              zIndex: 1,
-            }}
-          />
-          <BlurText
-            text="Experience the Excellence"
-            delay={150}
-            animateBy="words"
-            direction="top"
-            className="customBlurText"
-            style={{
-              fontSize: "2vw",
-              color: "white",
-              fontWeight: "bold",
-              fontFamily: "Merriweather,serif",
-              zIndex: 1,
-            }}
-          />
-        </div>
-        <Button
+        <Box
           sx={{
             display: "flex",
-            justifySelf: "center",
-            alignSelf: "center",
-            width: "auto",
-            fontFamily: "Merriweather,serif",
-            padding: { xs: "1vw", lg: "0.7vw" },
-            marginTop: { xs: "3vw", lg: "2vw" },
-            borderRadius: { xs: "5vw", lg: "2vw" },
-            fontSize: { xs: "2vw", lg: "0.8vw" },
-            fontWeight: { lg: 600 },
-            color: "black",
-            backgroundColor: "white",
-            ":hover": {
-              backgroundColor: "#d4af37",
-            },
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+            width: "100vw",
           }}
-          onClick={() => navigate("/products")}
         >
-          Shop now
-        </Button>
+          <Button
+            sx={{
+              animation: "float 2s ease-in-out infinite",
+
+              width: "fit-content",
+              minWidth: "unset",
+              fontFamily: "Merriweather,serif",
+              padding: { xs: "1vw", lg: "0.7vw" },
+              paddingLeft: { xs: "2vw", lg: "1vw" },
+              borderRadius: { xs: "5vw", lg: "2vw" },
+              fontSize: { xs: "3vw", lg: "0.8vw" },
+              fontWeight: { lg: 600 },
+              color: "white",
+              backgroundColor: "transparent",
+              border: "1px solid white",
+              // ":hover": {
+              //   backgroundColor: "grey",
+              // },
+            }}
+            onClick={() => navigate("/products")}
+          >
+            Shop now !
+          </Button>
+        </Box>
       </div>
       <WaterfallEffect>
         <Footer />

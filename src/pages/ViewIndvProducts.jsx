@@ -31,7 +31,7 @@ export default function ViewIndvProducts(props) {
         const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
 
         const response = await axios.delete(
-          `${apiUrl}/seller/product/${productId}`,
+          `${apiUrl}m/seller/product/${productId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

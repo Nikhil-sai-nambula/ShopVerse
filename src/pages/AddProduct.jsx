@@ -80,7 +80,7 @@ export default function AddProduct() {
         const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
 
         const response = await axios.post(
-          "${apiUrl}/seller/product/upload",
+          "${apiUrl}m/seller/product/upload",
           formData,
           {
             headers: {

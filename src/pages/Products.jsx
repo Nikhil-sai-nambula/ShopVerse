@@ -158,7 +158,7 @@ export default function () {
     const fetchData = async () => {
       try {
         const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
-        const response = await fetch(`${apiUrl}/products/getAllProducts`);
+        const response = await fetch(`${apiUrl}m/products/getAllProducts`);
         if (!response.ok) {
           throw new Error("Couldn't retrieve Data");
         }
@@ -207,7 +207,7 @@ export default function () {
         setWishListLoading(true);
         const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
         const response = await axios.get(
-          `${apiUrl}/wishlist/get-wishlist-items/${user.userId}`,
+          `${apiUrl}m/wishlist/get-wishlist-items/${user.userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -254,7 +254,7 @@ export default function () {
       const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
 
       const response = await axios.post(
-        `${apiUrl}/wishlist/add/${user.userId}`,
+        `${apiUrl}m/wishlist/add/${user.userId}`,
         formattedProduct,
         {
           headers: {
@@ -280,7 +280,7 @@ export default function () {
       const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
 
       const response = await axios.delete(
-        `${apiUrl}/wishlist/remove/${user.userId}`,
+        `${apiUrl}m/wishlist/remove/${user.userId}`,
 
         {
           headers: {
@@ -445,7 +445,7 @@ export default function () {
                 "& .MuiAutocomplete-popupIndicator": {
                   display: "none",
                 },
-                padding: { xs: "1.2vw", sm: "0vw", lg: "0vw" },
+                padding: { xs: "1vw", sm: "0vw", lg: "0vw" },
                 paddingLeft: { xs: "1vw", sm: "1.2vw", lg: "1vw" },
                 paddingRight: { xs: "1vw", lg: "1vw" },
                 display: "flex",

@@ -59,7 +59,7 @@ export const CartProvider = ({ children }) => {
       try {
         setCartLoading(true);
         const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
-        const response = await axios.get(`${apiUrl}/cart/${user.userId}`, {
+        const response = await axios.get(`${apiUrl}m/cart/${user.userId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
@@ -90,7 +90,7 @@ export const CartProvider = ({ children }) => {
         const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
 
         const response = await axios.post(
-          `${apiUrl}/cart/add/${user.userId}`,
+          `${apiUrl}m/cart/add/${user.userId}`,
           {
             productId,
             productSize,
@@ -137,7 +137,7 @@ export const CartProvider = ({ children }) => {
       try {
         const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
 
-        const response = await axios.delete(`${apiUrl}/cart/remove-item`, {
+        const response = await axios.delete(`${apiUrl}m/cart/remove-item`, {
           params: { userId: user.userId, productId },
           headers: {
             Authorization: `Bearer ${token}`,
@@ -174,7 +174,7 @@ export const CartProvider = ({ children }) => {
         const apiUrl = import.meta.env.VITE_SHOPVERSE_URL;
 
         await axios.put(
-          `${apiUrl}/cart/update-quantity`,
+          `${apiUrl}m/cart/update-quantity`,
           {
             userId: user.userId,
             productId,
