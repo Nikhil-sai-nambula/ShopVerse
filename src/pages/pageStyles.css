@@ -350,7 +350,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2vw;
+    gap: 1.5vw;
   }
 
   .product-info-image-section {
@@ -405,7 +405,7 @@ html {
     flex-direction: column;
     justify-content: center;
     background-color: whitesmoke;
-    width: 60vw;
+    width: 70vw;
     border-radius: 1vw;
     padding: 3vw;
   }

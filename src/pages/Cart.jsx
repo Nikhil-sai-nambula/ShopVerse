@@ -61,12 +61,12 @@ export default function (props) {
                   animation="wave"
                   sx={{
                     width: {
-                      xs: "15vw",
+                      xs: "20vw",
                       sm: "15vw",
                       md: "17vw",
                       lg: "9vw",
                     },
-                    height: { xs: "9vh", sm: "17vw", md: "20vw", lg: "10vw" },
+                    height: { xs: "13vh", sm: "17vw", md: "20vw", lg: "10vw" },
                     bgcolor: "grey.300",
                     margin: 0,
                   }}

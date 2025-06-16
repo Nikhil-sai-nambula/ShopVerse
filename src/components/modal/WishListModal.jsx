@@ -49,49 +49,54 @@ export default function WishListModal({
       >
         {shouldBeDisplayed &&
           (!wishListProds || wishListProds.length === 0) &&
-          Array.from({ length: 5 }).map((_, index) => (
+          Array.from({ length: 4 }).map((_, index) => (
             <div className="wishlist-skeleton" key={index}>
-              <div style={{ display: "flex", margin: "1vw", gap: "1vw" }}>
+              <div style={{ display: "flex", margin: "1vw", gap: "2vw" }}>
                 <Skeleton
                   variant="rounded"
                   animation="wave"
                   sx={{
                     width: {
-                      xs: "12vw",
+                      xs: "25vw",
                       sm: "15vw",
                       md: "17vw",
                       lg: "8vw",
                     },
-                    height: { xs: "9vh", sm: "17vw", md: "20vw", lg: "10vw" },
+                    marginLeft: { xs: "3vw", sm: "0vw", lg: "0vw" },
+                    height: { xs: "18vh", sm: "17vw", md: "20vw", lg: "12vw" },
                     bgcolor: "grey.300",
-                    margin: 0,
                   }}
                 />
                 <div>
                   <Skeleton
                     variant="text"
                     sx={{
-                      fontSize: { xs: "1vw", sm: "4vw", md: "3vw", lg: "1vw" },
-                      width: { xs: "20vw", sm: "15vw", md: "15vw", lg: "15vw" },
-                      margin: 0,
+                      fontSize: { xs: "2vw", sm: "4vw", md: "3vw", lg: "1vw" },
+                      width: { xs: "30vw", sm: "15vw", md: "15vw", lg: "15vw" },
                       lineHeight: { sm: 1, lg: 2 },
                     }}
                   />
                   <Skeleton
                     variant="text"
                     sx={{
-                      fontSize: { xs: "1vw", sm: "4vw", md: "3vw", lg: "1vw" },
-                      width: { xs: "20vw", sm: "15vw", md: "15vw", lg: "15vw" },
-                      margin: 0,
+                      fontSize: { xs: "2vw", sm: "4vw", md: "3vw", lg: "1vw" },
+                      width: { xs: "28vw", sm: "15vw", md: "15vw", lg: "15vw" },
                       lineHeight: { sm: 1, lg: 1 },
                     }}
                   />
                   <Skeleton
                     variant="text"
                     sx={{
-                      fontSize: { xs: "1vw", sm: "4vw", md: "3vw", lg: "1vw" },
-                      width: { xs: "20vw", sm: "15vw", md: "15vw", lg: "15vw" },
-                      margin: 0,
+                      fontSize: { xs: "2vw", sm: "4vw", md: "3vw", lg: "1vw" },
+                      width: { xs: "28vw", sm: "15vw", md: "15vw", lg: "15vw" },
+                      lineHeight: { sm: 1, lg: 1 },
+                    }}
+                  />
+                  <Skeleton
+                    variant="text"
+                    sx={{
+                      fontSize: { xs: "3vw", sm: "4vw", md: "3vw", lg: "1vw" },
+                      width: { xs: "15vw", sm: "15vw", md: "15vw", lg: "15vw" },
                       lineHeight: { sm: 1, lg: 1 },
                     }}
                   />

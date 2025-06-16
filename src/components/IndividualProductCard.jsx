@@ -124,12 +124,15 @@ export default function (props) {
         {isFavorite ? (
           <FavoriteIcon
             className="fav-icon"
-            sx={{ fontSize: { xs: "6vw", lg: "1.8vw" } }}
+            sx={{ fontSize: { xs: "6vw", sm: "2vw", lg: "1.8vw" } }}
           />
         ) : (
           <FavoriteBorderIcon
             className="fav-icon"
-            sx={{ fontSize: { xs: "6vw", lg: "1.8vw" }, color: "grey" }}
+            sx={{
+              fontSize: { xs: "6vw", sm: "2vw", lg: "1.8vw" },
+              color: "grey",
+            }}
           />
         )}
       </div>

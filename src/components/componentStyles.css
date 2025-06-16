@@ -207,7 +207,7 @@
 
   .indv-image {
     position: relative;
-    height: 35vh;
+    height: 33vh;
     width: 45vw;
     /* border-radius: 10px; */
     object-fit: cover;
@@ -215,7 +215,7 @@
   }
 
   .product-name {
-    font-size: 4vw;
+    font-size: 3vw;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
     font-weight: 700;
@@ -226,7 +226,7 @@
 
   .product-one-liner {
     margin-top: 0.1vw;
-    font-size: 2.5vw;
+    font-size: 2vw;
     color: black;
     font-weight: 500;
     text-align: left;
@@ -236,7 +236,7 @@
     display: flex;
     align-items: center;
     position: absolute;
-    font-size: 3.5vw;
+    font-size: 2.5vw;
     gap: 0.6vw;
     justify-content: space-evenly;
     background-color: rgb(240, 240, 240);
@@ -246,5 +246,8 @@
     padding: 0.3vw;
     width: auto;
     color: black;
+  }
+  .wishlist-skeleton {
+    margin-top: 2vw;
   }
 }
