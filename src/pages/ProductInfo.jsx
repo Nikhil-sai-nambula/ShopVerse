@@ -26,7 +26,9 @@ export default function () {
   const navigate = useNavigate();
   const sliderRef = useRef(null);
   const product = location.state?.product;
-  const imageList = product.imageURL;
+  // Refresh, a shared link, or a new tab arrives without router state, so the
+  // product is absent. Fall back to an empty list rather than throwing on it.
+  const imageList = product?.imageURL ?? [];
   const [quantity, setQuantity] = useState(0);
   const [size, setSize] = useState(42);
   const [selected, setSelected] = useState(false);
@@ -36,6 +38,49 @@ export default function () {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const mainImage = imageList[currentSlide];
+
+  // Every hook above runs unconditionally, then we bail out before any of the
+  // product fields are read.
+  if (!product) {
+    return (
+      <div className="product-info">
+        <div className="product-details" style={{ padding: "8vh 1.5rem" }}>
+          <Typography
+            sx={{
+              fontSize: { xs: "1.2rem", sm: "1.4rem" },
+              fontFamily: "Merriweather, serif",
+              color: "black",
+            }}
+          >
+            This product could not be loaded.
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: { xs: "0.9rem", sm: "1rem" },
+              color: "grey",
+              marginTop: "0.5rem",
+            }}
+          >
+            Links to a single product only carry the product while you navigate
+            from the catalogue. Open one from the products page to see it here.
+          </Typography>
+          <Button
+            variant="contained"
+            onClick={() => navigate("/products")}
+            sx={{
+              marginTop: "1.5rem",
+              bgcolor: "black",
+              color: "white",
+              "&:hover": { bgcolor: "#333" },
+            }}
+          >
+            Browse products
+          </Button>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   const handleMainImage = (url) => {
     const newIndex = imageList.indexOf(url);
